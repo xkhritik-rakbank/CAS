@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="JenkinsFirstBuild" default="jar" basedir=".">
+	
+	<!-- project related Propeties -->	
+	<property name="HelloText" value="bEGINING ANTBuild .." />
+	<property name="src.dir" location="src" />
+	<property name="build.src.dir" location="bin/classes" />
+	<property name="build.test.dir" location="bin/test-classes" />
+	<property name="dist.dir" location="dist/jars" />
+	<property name="deliverables.dir" location="G:\TestBuild" /> <!-- to be changed realease -->
+	<!-- Variables used for JUnit testing -->
+	<property name="test.dir" location="test" />
+	<property name="test.report.junit.xml.dir" location="dist/testreports/junit/xml" />
+	<property name="test.report.junit.html.dir" location="dist/testreports/junit/html" />
+	<!-- Variables used for JaCoCo Code Coverage -->
+	<property name="test.report.jacoco.dir" location="dist/testreports/jacoco" />
+	
+	<target name="Hello">
+    	<echo>${HelloText}</echo>
+	</target>
+	
+	<!-- Deletes the existing build. -->
+	<target name="clean" depends="Hello">
+		<delete dir="${build.src.dir}" />
+		<delete dir="${build.test.dir}" />
+		<delete dir="${test.report.junit.html.dir}" />
+		<delete dir="${test.report.junit.xml.dir}" />
+		<delete dir="${test.report.jacoco.dir}" />
+		<delete dir="${dist.dir}" />
+		<delete file="TESTS-TestSuites.xml"/>
+	</target>
+	
+	<!-- Creates the build Directory. -->
+	<target name="make" depends="clean">
+		<mkdir dir="${build.src.dir}" />
+		<mkdir dir="${build.test.dir}" />
+		<mkdir dir="${dist.dir}" />
+		<mkdir dir="${test.report.junit.xml.dir}" />
+		<mkdir dir="${test.report.junit.html.dir}" />
+		<mkdir dir="${test.report.jacoco.dir}" />
+	</target>
+	
+	<!-- Define the project classpath -->
+	<path id="compile.class.path">
+		<fileset dir="${ant.library.dir}" includes="*.jar" />
+		<fileset dir="../../External/workspace/lib" includes="*.jar"/>
+		<fileset dir="lib" includes="*.jar"/>
+		<pathelement location="../../External/workspace/bin/classes"/>
+	</path>
+
+	<path id="src.class.path">
+		<path refid="compile.class.path" />
+		<pathelement location="${build.src.dir}"/>
+	</path>
+	
+	<path id="test.class.path">
+		<path refid="src.class.path" />
+		<pathelement location="${build.test.dir}" />
+	</path>
+
+	
+	<!-- Compiles the Java Code. -->
+	<target name="compile" depends="make">
+		<javac srcdir="${src.dir}" destdir="${build.src.dir}" 
+			debug="yes" classpathref="compile.class.path">
+		</javac>
+		
+		<!-- COPYING HIBERNATE-MAPPING XMLS to bin folder -->
+		<copy todir="${build.src.dir}">
+			<fileset dir="${src.dir}" includes="**/*hbm.xml" />
+		</copy>
+		
+		<javac srcdir="${test.dir}" destdir="${build.test.dir}"
+			includeantruntime="no" debug="yes"
+			classpathref="src.class.path">
+		</javac>
+	</target>
+	
+	<!-- Runs the JUnit4 Test and Generates Jacoco Code Coverage Reports -->
+	<target name="Junit" depends="compile">
+		<jacoco:coverage destfile="${test.report.jacoco.dir}/jacoco.exec" xmlns:jacoco="antlib:org.jacoco.ant">
+			<junit printsummary="on"
+				fork="yes"
+				haltonerror="no"
+				failureproperty="test.failure"
+				errorproperty="test.error">
+				<classpath refid="test.class.path">
+				</classpath>
+				<formatter type="xml"/>
+				<batchtest todir="${test.report.junit.xml.dir}">
+					<fileset dir="${test.dir}">
+						<include name="**/*Test*.java"/>
+					</fileset>
+				</batchtest>
+			</junit>
+		</jacoco:coverage>
+	</target>
+	
+	<!-- Generates HTML Reports for Junit Test Cases -->
+	<target name="JunitHTMLReports" depends="Junit">
+		<junitreport>
+			<fileset dir="${test.report.junit.xml.dir}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${test.report.junit.html.dir}" />
+		</junitreport>
+	</target>
+	
+	<!-- Creates the deployable jar file -->
+	<target name="jar" depends="Junit,JunitHTMLReports">
+		<condition property="build.status" value=".STABLE" else=".UNSTABLE">
+			<and>
+				<isfalse value="${test.failure}"/>
+				<isfalse value="${test.error}"/>
+			</and>
+		</condition>
+		<property name="build.jar.name"
+			value="${deliverables.dir}/Essentials.jar" />
+		<jar 
+			destfile="${build.jar.name}"
+			basedir="${build.src.dir}">
+		</jar>
+	</target>
+</project>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="lib/com.ibm.mq.jar"/>
+	<classpathentry kind="lib" path="lib/ejbclient.jar"/>
+	<classpathentry kind="lib" path="lib/javax.resource-3.1.2.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="lib/ngejbcallbroker.jar"/>
+	<classpathentry kind="lib" path="lib/odweb.jar"/>
+	<classpathentry kind="lib" path="lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="lib/omnishared.jar"/>
+	<classpathentry kind="lib" path="lib/wfdesktop.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

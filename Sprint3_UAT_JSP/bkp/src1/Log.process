@@ -1,0 +1,57 @@
+<!--------------------------------------------------------------------------------------------------------
+//           NEWGEN SOFTWARE TECHNOLOGIES LIMITED
+
+//Group						 : Application –Projects
+//Product / Project			 : RAKBank 
+//Module                     : Request-Screen Form Painitng
+//File Name					 : Log.process          
+//Author                     : Amandeep
+// Date written (DD/MM/YYYY) : 2-Feb-2015
+//Description                : Standard file to write custom logs
+//---------------------------------------------------------------------------------------------------->
+
+<%@ page import="java.text.*" %>
+
+<%!
+public static void WriteLog(String strMsg)    
+{
+//commented by Deepak on 18 june to check server hang issue.
+
+	StringBuffer strFilePath = new StringBuffer(50);
+	File dir= null;
+	FileOutputStream fos = null;
+	String sFileName = "CustomLog.Log";
+	Writer wrt = null;
+	
+	DateFormat dtFormat = new SimpleDateFormat("ddMMyyyy");
+	String sFName = "CustomLog_RakBank"+dtFormat.format(new java.util.Date())+"_CAC.Log";	
+	System.out.println(sFName);
+	try
+	{
+		strFilePath.append(System.getProperty("user.dir"));
+		System.out.println(sFileName);
+		dir = new File(strFilePath.toString(), "CustomLog");
+		if (!dir.exists()) 
+		{
+			dir.mkdir();
+		}
+		strFilePath.append(File.separatorChar);
+		strFilePath.append("CustomLog");
+		strFilePath.append(File.separatorChar);
+		strFilePath.append(sFName);
+		System.out.println(strFilePath.toString());
+		java.util.Date objDate=new java.util.Date();
+		fos = new FileOutputStream(strFilePath.toString(),true);
+		wrt = new BufferedWriter(new OutputStreamWriter(fos));
+		wrt.write("[" + objDate.toString() + "]\n" + strMsg + "\n\n" );
+		wrt.flush();
+		wrt.close();
+	}
+	catch(Exception e)
+	{
+	
+		System.out.println(e.toString());
+	}	
+	
+}
+%>

@@ -1,0 +1,648 @@
+
+/*------------------------------------------------------------------------------------------------------
+
+                     NEWGEN SOFTWARE TECHNOLOGIES LIMITED
+
+Group                                                             : Application -Projects
+
+Project/Product                                                   : Rakbank  
+
+Application                                                       : Credit Card
+
+Module                                                            : OV
+
+File Name                                                         : CC_OV
+
+Author                                                            : Disha
+
+Date (DD/MM/YYYY)                                                 : 
+
+Description                                                       : 
+
+-------------------------------------------------------------------------------------------------------
+
+CHANGE HISTORY
+
+-------------------------------------------------------------------------------------------------------
+
+Problem No/CR No   Change Date   Changed By    Change Description
+1.                 12-6-2017     Disha		   Changes done to hide OV tab
+------------------------------------------------------------------------------------------------------*/
+
+package com.newgen.omniforms.user;
+
+import java.util.HashMap;
+import java.util.List;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.validator.ValidatorException;
+
+import com.newgen.omniforms.FormConfig;
+import com.newgen.omniforms.FormReference;
+import com.newgen.omniforms.context.FormContext;
+import com.newgen.omniforms.event.ComponentEvent;
+import com.newgen.omniforms.event.FormEvent;
+import com.newgen.omniforms.listener.FormListener;
+
+
+public class CDOB_OV extends CDOB_Common implements FormListener
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	boolean IsFragLoaded=false;
+	String queryData_load="";
+	
+	
+	/*          Function Header:
+
+	 **********************************************************************************
+
+		         NEWGEN SOFTWARE TECHNOLOGIES LIMITED
+
+
+		Date Modified                       : 6/08/2017              
+		Author                              : Disha              
+		Description                         : To Make Sheet Visible in DDVT Maker(8,9,11,12,13,15,16,17,18)              
+cmplx_DEC_VerificationRequired
+	 ***********************************************************************************  */
+	public void formLoaded(FormEvent pEvent)
+	{
+		FormConfig objConfig = FormContext.getCurrentInstance().getFormConfig();
+        objConfig.getM_objConfigMap().put("PartialSave", "true");
+		DigitalOnBoarding.mLogger.info( "Inside formLoaded()" + pEvent.getSource().getName());
+		
+		// Changes done to hide OV tab
+		makeSheetsInvisible("Tab1", "7,8,9,12,13,14,15,16,17");
+		DigitalOnBoarding.mLogger.info( "Inside formLoaded() of CC_OV");
+	}
+	
+
+	/*          Function Header:
+
+	 **********************************************************************************
+
+	         NEWGEN SOFTWARE TECHNOLOGIES LIMITED
+
+
+	Date Modified                       : 6/08/2017              
+	Author                              : Disha              
+	Description                         : For setting the form header             
+
+	 ***********************************************************************************  */
+	public void formPopulated(FormEvent pEvent) 
+	{
+        
+        try{
+        	DigitalOnBoarding.mLogger.info("Inside CC_OV CC");
+        	FormReference formObject = FormContext.getCurrentInstance().getFormReference();
+        	formObject.setNGValue("Mandatory_Frames", NGFUserResourceMgr_CreditCard.getGlobalVar("OV_Frame_Name"));
+           new CDOB_CommonCode().setFormHeader(pEvent);
+         //Done By aman for Sprint2
+   		if (formObject.getNGValue("RefFrmOV").equals("Y") ){
+   			formObject.setSheetVisible(tabName,9,true);
+   		}
+        }catch(Exception e)
+        {
+            DigitalOnBoarding.mLogger.info( "Exception:"+e.getMessage());
+        }
+    }
+	
+	
+	/*          Function Header:
+
+	 **********************************************************************************
+
+	         NEWGEN SOFTWARE TECHNOLOGIES LIMITED
+
+
+	Date Modified                       : 6/08/2017              
+	Author                              : Disha              
+	Description                         : For Fetching the Fragments/Set controls on fragment Load/Logic on  Mouseclick/valuechange            
+
+	 ***********************************************************************************  */
+	public void eventDispatched(ComponentEvent pEvent) throws ValidatorException {
+		
+	//	CreditCard.mLogger.info( "EventName:" + pEvent.getType() + "#ControlName#" + pEvent.getSource().getName());
+		FormReference formObject = FormContext.getCurrentInstance().getFormReference();
+
+      switch(pEvent.getType()) {
+
+          case FRAME_EXPANDED:
+				//CreditCard.mLogger.info( "EventName:" + pEvent.getType() + "#ControlName#" + pEvent.getSource().getName());
+				
+				new CDOB_CommonCode().FrameExpandEvent(pEvent);						
+
+        		
+       break;
+                
+          case FRAGMENT_LOADED:
+        	//  CreditCard.mLogger.info( "EventName:" + pEvent.getType() + "#ControlName#" + pEvent.getSource().getName());
+        	  fragment_loaded(pEvent,formObject);
+        	  
+        	  
+				
+			
+			  break;
+			  
+			case MOUSE_CLICKED:
+			//	CreditCard.mLogger.info( "EventName:" + pEvent.getType() + "#ControlName#" + pEvent.getSource().getName());
+				new CDOB_CommonCode().mouse_clicked(pEvent);
+				break;
+			 case VALUE_CHANGED:
+				//	CreditCard.mLogger.info( "EventName:" + pEvent.getType() + "#ControlName#" + pEvent.getSource().getName());
+					new CDOB_CommonCode().value_changed(pEvent);
+					break;
+                  default: break;
+	     
+	     }
+
+	}	
+	
+	
+	public void initialize() {
+		DigitalOnBoarding.mLogger.info( "Inside PL PROCESS initialize()" );
+		 
+
+	}
+
+	
+	/*          Function Header:
+
+	 **********************************************************************************
+
+	         NEWGEN SOFTWARE TECHNOLOGIES LIMITED
+
+
+	Date Modified                       : 6/08/2017              
+	Author                              : Disha              
+	Description                         : Logic After Workitem Save          
+
+	 ***********************************************************************************  */
+	public void saveFormCompleted(FormEvent pEvent) throws ValidatorException {
+		DigitalOnBoarding.mLogger.info( "Inside PL PROCESS saveFormCompleted()" + pEvent.getSource());
+		CustomSaveForm();
+
+	}
+
+	/*          Function Header:
+
+	 **********************************************************************************
+
+	         NEWGEN SOFTWARE TECHNOLOGIES LIMITED
+
+
+	Date Modified                       : 6/08/2017              
+	Author                              : Disha              
+	Description                         : Logic Before Workitem Save          
+
+	 ***********************************************************************************  */
+	public void saveFormStarted(FormEvent pEvent) throws ValidatorException {
+		FormReference formObject = FormContext.getCurrentInstance().getFormReference();
+		DigitalOnBoarding.mLogger.info( "Inside PL PROCESS saveFormStarted()" + pEvent.getSource());
+		formObject.setNGValue("get_parent_data",queryData_load);
+		DigitalOnBoarding.mLogger.info("Final val of queryData_load:"+ formObject.getNGValue("get_parent_data"));
+		//OriginalDocs();
+		if("Approve".equalsIgnoreCase(formObject.getNGValue("cmplx_DEC_Decision"))){
+			DigitalOnBoarding.mLogger.info( "Inside Approve SFS OV WI: "+formObject.getWFWorkitemName());
+			DigitalOnBoarding.mLogger.info( "Value of ORIGINAL_VALIDATION is : "+formObject.getNGValue("ORIGINAL_VALIDATION"));
+			formObject.setNGValue("ORIGINAL_VALIDATION", "Yes");
+			DigitalOnBoarding.mLogger.info( "Value of ORIGINAL_VALIDATION is : "+formObject.getNGValue("ORIGINAL_VALIDATION"));
+			formObject.setNGValue("q_Hold2", 1);
+		}
+	}
+
+	/*          Function Header:
+
+	 **********************************************************************************
+
+	         NEWGEN SOFTWARE TECHNOLOGIES LIMITED
+
+
+	Date Modified                       : 6/08/2017              
+	Author                              : Disha              
+	Description                         : Logic After Workitem Done          
+
+	 ***********************************************************************************  */
+	public void submitFormCompleted(FormEvent pEvent) throws ValidatorException {
+		DigitalOnBoarding.mLogger.info( "Inside PL PROCESS submitFormCompleted()" + pEvent.getSource());
+		
+		
+	}
+
+	/*          Function Header:
+
+	 **********************************************************************************
+
+	         NEWGEN SOFTWARE TECHNOLOGIES LIMITED
+
+
+	Date Modified                       : 6/08/2017              
+	Author                              : Disha              
+	Description                         : Logic Before Workitem Done          
+
+	 ***********************************************************************************  */
+	public void submitFormStarted(FormEvent pEvent) throws ValidatorException {
+		FormReference formObject = FormContext.getCurrentInstance().getFormReference();
+
+		try{
+		DigitalOnBoarding.mLogger.info( "Inside PL PROCESS submitFormStarted()" + pEvent.getSource());
+		//below code commented by nikhil 7/12/17
+		//formObject.setNGValue("Decision", formObject.getNGValue("cmplx_DEC_Decision"));
+		formObject.setNGValue("OV_dec", formObject.getNGValue("cmplx_DEC_Decision"));
+		DigitalOnBoarding.mLogger.info( "Inside PL OV_dec submitFormStarted()" +formObject.getNGValue("OV_dec"));
+			 
+		DigitalOnBoarding.mLogger.info( "Inside SFS OV WI: "+formObject.getNGValue("cmplx_DEC_Decision"));
+		//modified by kashay on 4/1/17
+		if("Approve".equalsIgnoreCase(formObject.getNGValue("cmplx_DEC_Decision"))){
+			DigitalOnBoarding.mLogger.info( "Inside Approve SFS OV WI: "+formObject.getWFWorkitemName());
+			formObject.setNGValue("ORIGINAL_VALIDATION", "Yes");
+			DigitalOnBoarding.mLogger.info( "Value of ORIGINAL_VALIDATION is : "+formObject.getNGValue("ORIGINAL_VALIDATION"));
+			formObject.setNGValue("q_Hold2", 1);
+		}
+		else if("Reject".equalsIgnoreCase(formObject.getNGValue("cmplx_DEC_Decision"))){
+			DigitalOnBoarding.mLogger.info( "Inside Reject SFS OV WI: "+formObject.getWFWorkitemName());
+			formObject.setNGValue("ORIGINAL_VALIDATION", "No");
+			formObject.setNGValue("q_Hold2", 1);
+			//Deepak Changes done for PCAS-2926
+			if("Re-Initiate".equalsIgnoreCase(formObject.getNGValue("Reject_DeC"))){
+				formObject.setNGValue("Reject_DeC","");
+			}
+		}
+		
+		DigitalOnBoarding.mLogger.info( "Value of ORIGINAL_VALIDATION is : "+formObject.getNGValue("ORIGINAL_VALIDATION"));
+		
+		}catch(Exception ex){
+			DigitalOnBoarding.mLogger.info( "Inside Exception submitFormstarted");
+		}
+		finally{
+			//app OV validation for document section
+			OriginalDocs(); 
+			saveIndecisionGrid();
+			LoadReferGrid();
+			String squeryrefer = "select referTo from NG_RLOS_GR_DECISION where workstepName like '%orignal%' and dec_wi_name= '" + formObject.getWFWorkitemName() + "' order by dateLastChanged desc ";
+			List<List<String>> FCURefer = formObject.getNGDataFromDataCache(squeryrefer);
+			//CreditCard.mLogger.info("RLOS COMMON"+ " iNSIDE prev_loan_dbr+ " + squeryloan);
+			String referto="";
+			if (FCURefer != null && FCURefer.size() > 0) {
+				referto = FCURefer.get(0).get(0);
+				}
+			if("FPU".equalsIgnoreCase(referto)){		
+				formObject.setNGValue("RefFrmOV", "Y");
+			}
+			
+		}
+	}
+
+
+	public void continueExecution(String arg0, HashMap<String, String> arg1) 
+	{
+		// TODO Auto-generated method stub
+		FormReference formObject = FormContext.getCurrentInstance().getFormReference();	
+		formObject.setNGValue("Decision", formObject.getNGValue("cmplx_DEC_Decision"));
+		formObject.setNGValue("OV_dec", formObject.getNGValue("cmplx_DEC_Decision"));
+		
+	}
+	
+	
+	/*          Function Header:
+
+	 **********************************************************************************
+
+	         NEWGEN SOFTWARE TECHNOLOGIES LIMITED
+
+
+	Date Modified                       : 6/08/2017              
+	Author                              : Disha              
+	Description                         : Set form controls on load       
+
+	
+	 ***********************************************************************************  */
+	
+	//Below code added by yash on 15/12/2017 as per fsd 2.7
+	private void fragment_loaded(FormEvent pEvent,FormReference formObject)
+	{
+			if ("Customer".equalsIgnoreCase(pEvent.getSource().getName())) {
+				//formObject.setLocked("Customer_Frame1",true);
+				LoadView(pEvent.getSource().getName());
+				formObject.setLocked("Customer_Frame1",true);
+				formObject.setLocked("cmplx_Customer_DOb", true);
+				formObject.setLocked("cmplx_Customer_IdIssueDate", false);//added by saurabh1
+				formObject.setLocked("cmplx_Customer_EmirateIDExpiry", false);//added by saurabh1
+				formObject.setLocked("cmplx_Customer_VisaIssueDate", true);
+				formObject.setLocked("cmplx_Customer_PassportIssueDate", true);
+				formObject.setLocked("cmplx_Customer_VisaExpiry", true);
+				formObject.setLocked("cmplx_Customer_PassPortExpiry", true);
+				formObject.setVisible("OriginalValidation_Customer_Update",true);//added by saurabh1
+				formObject.setLocked("OriginalValidation_Customer_Update",false);//added by saurabh1
+				formObject.setLocked("Customer_FetchDetails",true);
+				formObject.setLocked("Customer_save",true);
+				
+			loadPicklistCustomer();
+
+		}	
+
+		else if ("Product".equalsIgnoreCase(pEvent.getSource().getName())) {
+			//Code commented by deepak as we are loading desc so no need to load the picklist(grid is already having desc) - 28Sept2017
+			/*
+				LoadPickList("Product_type", "select convert(varchar, Type) from NG_MASTER_TypeOfProduct");
+				LoadPickList("AppType", "select '--Select--' as description,'' as code union select convert(varchar, Description),code from ng_master_ApplicationType with (nolock) order by code");
+				LoadPickList("ReqProd", "select '--Select--' union select convert(varchar, description) from NG_MASTER_RequestedProduct with (nolock) where activityName='"+formObject.getWFActivityName()+"'");
+				*/
+				formObject.setLocked("Product_Frame1",true);
+				
+		}
+		/*else if ("IncomingDocument".equalsIgnoreCase(pEvent.getSource().getName())) {
+			fetchIncomingDocRepeater();
+			}
+		*/
+
+		else if ("IncomeDetails".equalsIgnoreCase(pEvent.getSource().getName())) {
+			formObject.setLocked("IncomeDetails_Frame1",true);
+	
+			loadpicklist_Income();
+		}
+
+		else if ("Liability_New".equalsIgnoreCase(pEvent.getSource().getName())) {
+			formObject.setLocked("ExtLiability_Frame1",true);
+			LoadPickList("ExtLiability_contractType", "select '--Select--' as description,'' as code union select convert(varchar, description),code from ng_master_contract_type with (nolock) order by code");
+
+		}
+
+		else if ("EMploymentDetails".equalsIgnoreCase(pEvent.getSource().getName())) {
+			//formObject.setLocked("EMploymentDetails_Frame1",true);
+			LoadView(pEvent.getSource().getName());
+			//loadPicklistEmployment();
+			loadPicklistEmployment();
+		}
+
+		else if ("ELigibiltyAndProductInfo".equalsIgnoreCase(pEvent.getSource().getName())) {
+			formObject.setLocked("ELigibiltyAndProductInfo_Frame1",true);
+			/*formObject.setEnabled("ELigibiltyAndProductInfo_Save",true);*/
+		}
+
+		else if ("AddressDetails".equalsIgnoreCase(pEvent.getSource().getName())) {
+			loadPicklist_Address();
+			LoadView(pEvent.getSource().getName());
+		//	formObject.setLocked("AddressDetails_Frame1",true);
+			//loadPicklist_Address();
+			
+		}
+
+		else if ("AltContactDetails".equalsIgnoreCase(pEvent.getSource().getName())){
+			LoadPickList("AlternateContactDetails_CustdomBranch", "select '--Select--'as description,'' as code  union select convert(varchar, description),code from ng_MASTER_sol with (nolock) order by code");
+			//change by saurabh on 7th Dec
+			//LoadPickList("AlternateContactDetails_CardDisp", "select '--Select--' as description,'' as code union all select convert(varchar,description),code from NG_MASTER_Dispatch order by code ");// Load picklist added by aman to load the picklist in card dispatch to
+			LoadView(pEvent.getSource().getName());
+		//	formObject.setLocked("AltContactDetails_Frame1",true);
+			//change by saurabh for air arabia functionality.
+			AirArabiaValid();
+		} 
+
+		else if ("FATCA".equalsIgnoreCase(pEvent.getSource().getName())){
+
+			//12thsept
+			//formObject.setLocked("FATCA_Frame1",true);
+			formObject.setLocked("FATCA_Frame6",true);
+			//12thsept
+		}
+
+		else if ("KYC".equalsIgnoreCase(pEvent.getSource().getName())){
+
+			formObject.setLocked("KYC_Frame1",true);
+			
+		}
+
+		else if ("OECD".equalsIgnoreCase(pEvent.getSource().getName())){
+			LoadView(pEvent.getSource().getName());
+			//formObject.setLocked("OECD_Frame8",true);
+			
+		}
+		else if ("IncomingDocument".equalsIgnoreCase(pEvent.getSource().getName())){
+
+			//formObject.setLocked("IncomingDocument_Frame",true);
+			
+		}
+		else if ("Reference_Details".equalsIgnoreCase(pEvent.getSource().getName())) {
+			//12th sept
+			//formObject.setLocked("Reference_Details_Frame1",true);
+			formObject.setLocked("Reference_Details_ReferenceRelationship",true);
+
+			//12th sept
+		}
+		else if ("SupplementCardDetails".equalsIgnoreCase(pEvent.getSource().getName())) {
+			formObject.setLocked("SupplementCardDetails_Frame1",true);
+
+		}
+		else if ("CardDetails".equalsIgnoreCase(pEvent.getSource().getName())) {
+			//++below code added by nikhil for Self-Supp CR
+			Load_Self_Supp_Data();
+			//--above code added by nikhil for Self-Supp CR
+			formObject.setLocked("CardDetails_Frame1",true);
+			//added by nikhil for disbursal showstopper
+			Loadpicklist_CardDetails_Frag();
+
+		}
+		else if ("CompanyDetails".equalsIgnoreCase(pEvent.getSource().getName())) {
+			formObject.setLocked("CompanyDetails_Frame1", true);
+        loadPicklist_CompanyDet();
+		}
+		else if ("AuthorisedSignDetails".equalsIgnoreCase(pEvent.getSource().getName())) {
+//			formObject.setLocked("CompanyDetails_Frame2", true);
+				formObject.setLocked("AuthorisedSignDetails_ShareHolding", true);
+			LoadPickList("AuthorisedSignDetails_nationality", "select '--Select--'  as description,'' as code union select convert(varchar, description) ,code from NG_MASTER_Country with (nolock) order by code");
+			LoadPickList("AuthorisedSignDetails_SignStatus", "select '--Select--' union select convert(varchar, description) from NG_MASTER_SignatoryStatus with (nolock)");
+		}
+		else if ("PartnerDetails".equalsIgnoreCase(pEvent.getSource().getName())) {
+		//	formObject.setLocked("CompanyDetails_Frame3", true);
+		formObject.setLocked("PartnerDetails_Frame1", true);
+			LoadPickList("PartnerDetails_nationality", "select '--Select--'  as description,'' as code union select convert(varchar, description) ,code from NG_MASTER_Country with (nolock) order by code");
+		}
+		
+		//added by yash on 24/8/2017
+		else if ("NotepadDetails".equalsIgnoreCase(pEvent.getSource().getName())) {
+			//12th sept
+			//formObject.setLocked("NotepadDetails_Frame2",true);
+			notepad_load();
+			notepad_withoutTelLog();
+			//12th sept
+			String sActivityName=FormContext.getCurrentInstance().getFormConfig( ).getConfigElement("ActivityName");
+			DigitalOnBoarding.mLogger.info( "Activity name is:" + sActivityName);
+			//commented by nikhil for wrong value set
+			//formObject.setNGValue("NotepadDetails_Actusername",formObject.getNGValue("cmplx_Customer_FirstNAme") +" "+ formObject.getNGValue("cmplx_Customer_MiddleNAme") +" "+ formObject.getNGValue("cmplx_Customer_LastNAme"));
+			//ormObject.setNGValue("NotepadDetails_user",formObject.getNGValue("cmplx_Customer_FirstNAme") +" "+ formObject.getNGValue("cmplx_Customer_MiddleNAme") +" "+ formObject.getNGValue("cmplx_Customer_LastNAme"));
+
+			formObject.setNGValue("NotepadDetails_insqueue",sActivityName);
+			formObject.setLocked("NotepadDetails_noteDate",true);
+			formObject.setLocked("NotepadDetails_Actusername",true);
+			formObject.setLocked("NotepadDetails_user",true);
+			formObject.setLocked("NotepadDetails_insqueue",true);
+			formObject.setLocked("NotepadDetails_Actdate",true);
+			formObject.setVisible("NotepadDetails_SaveButton",true);
+			formObject.setTop("NotepadDetails_SaveButton",400);
+		}
+		//Commented for sonar
+		else if ("DecisionHistory".equalsIgnoreCase(pEvent.getSource().getName()) ) {
+
+			//for decision fragment made changes 8th dec 2017	
+		/*	formObject.setVisible("DecisionHistory_CheckBox1",false);
+			formObject.setVisible("DecisionHistory_Label1",false);
+			formObject.setVisible("cmplx_DEC_VerificationRequired",false);
+			formObject.setVisible("DecisionHistory_Label3",false);
+			formObject.setVisible("DecisionHistory_Combo3",false);
+			formObject.setVisible("DecisionHistory_Label6",false);
+			formObject.setVisible("DecisionHistory_Combo6",false);
+			formObject.setVisible("DecisionHistory_Decision_Label4",false);
+			formObject.setVisible("cmplx_DEC_Remarks",false);
+			formObject.setVisible("DecisionHistory_Label8",false);
+			formObject.setVisible("DecisionHistory_Text4",false);
+			formObject.setVisible("DecisionHistory_Label7",false);
+			formObject.setVisible("DecisionHistory_Text3",false);
+			formObject.setVisible("DecisionHistory_Label2",false);
+			formObject.setVisible("DecisionHistory_Text2",false);
+			formObject.setVisible("cmplx_DEC_ReferReason",false);
+			formObject.setVisible("cmplx_DEC_Description",false);
+			formObject.setVisible("cmplx_DEC_Strength",false);
+			formObject.setVisible("cmplx_DEC_Weakness",false);
+			formObject.setLocked("cmplx_DEC_ContactPointVeri",true);
+			formObject.setVisible("cmplx_DEC_ContactPointVeri",false);	                        
+
+
+			
+			formObject.setVisible("DecisionHistory_chqbook",false);	
+			formObject.setVisible("DecisionHistory_Label6",false);	
+			formObject.setVisible("cmplx_DEC_IBAN_No",false);	
+			formObject.setVisible("DecisionHistory_Label5",false);	
+			formObject.setVisible("DecisionHistory_Button2",false);	
+			formObject.setVisible("cmplx_DEC_NewAccNo",false);	
+			formObject.setVisible("cmplx_DEC_ChequebookRef",false);	
+			formObject.setVisible("DecisionHistory_Label4",false);	
+			formObject.setVisible("DecisionHistory_Label10",false);	
+			formObject.setVisible("cmplx_DEC_New_CIFID",false);	
+			formObject.setVisible("DecisionHistory_chqbook",false);	
+			formObject.setVisible("DecisionHistory_Label27",false);	
+			formObject.setVisible("cmplx_DEC_Cust_Contacted",false);	
+			formObject.setVisible("DecisionHistory_Label9",false);	
+			formObject.setVisible("cmplx_DEC_DCR_Refno",false);	
+			formObject.setVisible("DecisionHistory_Decision_ListView1",true);
+			formObject.setVisible("DecisionHistory_Decision_Label4",true);
+			formObject.setVisible("cmplx_DEC_Remarks",true);
+			formObject.setTop("DecisionHistory_save",335);
+			formObject.setTop("DecisionHistory_Decision_ListView1",250);
+			formObject.setLeft("DecisionHistory_Decision_Label4",280);
+			formObject.setLeft("cmplx_DEC_Remarks",280);
+			formObject.setTop("cmplx_DEC_Remarks",90);
+			formObject.setTop("DecisionHistory_Decision_Label4",74);
+			formObject.setTop("DecisionHistory_Decision_Label3",74);
+			formObject.setTop("cmplx_DEC_Decision",90);
+			
+			formObject.setVisible("DecisionHistory_chqbook",false);	
+			formObject.setVisible("DecisionHistory_Label6",false);	
+			formObject.setVisible("cmplx_DEC_IBAN_No",false);	
+			formObject.setVisible("DecisionHistory_Label5",false);	
+			formObject.setVisible("DecisionHistory_Button2",false);	
+			formObject.setVisible("cmplx_DEC_NewAccNo",false);	
+			formObject.setVisible("cmplx_DEC_ChequebookRef",false);	
+			formObject.setVisible("DecisionHistory_Label4",false);	
+			formObject.setVisible("DecisionHistory_Label10",false);	
+			formObject.setVisible("cmplx_DEC_New_CIFID",false);	
+			formObject.setVisible("DecisionHistory_chqbook",false);	
+			formObject.setVisible("DecisionHistory_Label27",false);	
+			formObject.setVisible("cmplx_DEC_Cust_Contacted",false);	
+			formObject.setVisible("DecisionHistory_Label9",false);	
+			formObject.setVisible("cmplx_DEC_DCR_Refno",false);	
+			formObject.setVisible("DecisionHistory_Decision_ListView1",true);
+			formObject.setVisible("DecisionHistory_Decision_Label4",true);
+			formObject.setVisible("cmplx_DEC_Remarks",true);
+			formObject.setTop("DecisionHistory_save",150);
+			formObject.setTop("DecisionHistory_Decision_ListView1",190);
+			formObject.setLeft("DecisionHistory_Decision_Label4",280);
+			formObject.setLeft("cmplx_DEC_Remarks",280);
+			formObject.setTop("cmplx_DEC_Remarks",34);
+			formObject.setTop("DecisionHistory_Decision_Label4",20);//remarks
+			formObject.setTop("DecisionHistory_Decision_Label3",20);//decision
+			formObject.setTop("cmplx_DEC_Decision",34);*/
+			//12th sept
+			  fragment_ALign("DecisionHistory_Decision_Label1,cmplx_DEC_VerificationRequired#DecisionHistory_Decision_Label3,cmplx_DEC_Decision#DecisionHistory_Label26,DecisionHistory_ReferTo#DecisionHistory_Label11,DecisionHistory_dec_reason_code#DecisionHistory_Decision_Label4,cmplx_DEC_Remarks#\n#DecisionHistory_ADD#DecisionHistory_Modify#DecisionHistory_Delete#\n#DecisionHistory_Decision_ListView1#\n#DecisionHistory_save","DecisionHistory");//\n for new line
+			  formObject.setHeight("DecisionHistory_Frame1", formObject.getTop("DecisionHistory_save")+ formObject.getHeight("DecisionHistory_save")+20);
+				formObject.setHeight("DecisionHistory", formObject.getHeight("DecisionHistory_Frame1")+20);
+				
+				if(!formObject.isVisible("OriginalValidation_Frame1")){
+					formObject.fetchFragment("Original_validation", "OriginalValidation", "q_OrigVal");
+					fetchoriginalDocRepeater();
+				}
+				//for decision fragment made changes 8th dec 2017	
+			  loadPicklist3();
+		} 	
+		//12th sept
+		else if ("CC_Loan".equalsIgnoreCase(pEvent.getSource().getName())) {
+			formObject.setLocked("CC_Loan_Frame1",true);
+			formObject.setLocked("CC_Loan_Frame2",true);
+			formObject.setLocked("CC_Loan_Frame3",true);
+			formObject.setLocked("totBalTransfer",true);
+			loadPicklist_ServiceRequest();
+		}
+		
+		else if ("PartMatch".equalsIgnoreCase(pEvent.getSource().getName())) {
+			//loadPicklist_Address();
+			formObject.setLocked("PartMatch_Frame1",true);
+
+		}
+		else if ("FinacleCRMIncident".equalsIgnoreCase(pEvent.getSource().getName())) {
+			//loadPicklist_Address();
+			formObject.setLocked("FinacleCRMIncident_Frame1",true);
+
+		}
+		else if ("FinacleCRMCustInfo".equalsIgnoreCase(pEvent.getSource().getName())) {
+			//loadPicklist_Address();
+			formObject.setLocked("FinacleCRMCustInfo_Frame1",true);
+
+		}
+		else if ("ExternalBlackList".equalsIgnoreCase(pEvent.getSource().getName())) {
+			//loadPicklist_Address();
+			formObject.setLocked("ExternalBlackList_Frame1",true);
+
+		}
+		else if ("FinacleCore".equalsIgnoreCase(pEvent.getSource().getName())) {
+			//loadPicklist_Address();
+			formObject.setLocked("FinacleCore_Frame1",true);
+			LoadPickList("FinacleCore_ChequeType", "select '--Select--' as description,'' as code union select convert(varchar, description),Code from ng_MASTER_Cheque_Type with (nolock) order by code");
+			LoadPickList("FinacleCore_TypeOfRetutn", "select '--Select--' union select convert(varchar, description) from ng_MASTER_TypeOfReturn with (nolock)");
+
+		}
+		else if ("MOL1".equalsIgnoreCase(pEvent.getSource().getName())) {
+			//loadPicklist_Address();
+			formObject.setLocked("MOL1_Frame1",true);
+			loadPicklist_Mol();
+		}
+		else if ("RejectEnq".equalsIgnoreCase(pEvent.getSource().getName())) {
+			//loadPicklist_Address();
+			formObject.setLocked("RejectEnq_Frame1",true);
+
+		}
+		else if ("SalaryEnq".equalsIgnoreCase(pEvent.getSource().getName())) {
+			formObject.setLocked("SalaryEnq_Frame1",true);
+		}
+		//12th sept
+
+	}
+
+
+	public String decrypt(String arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public String encrypt(String arg0) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+
+
+
+}
+

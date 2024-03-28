@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EE_EAI_MESSAGE>
+   <EE_EAI_HEADER>
+      <MsgFormat>CARD_SVC_ELIG_CHECK</MsgFormat>
+      <MsgVersion>0001</MsgVersion>
+      <RequestorChannelId>BPM</RequestorChannelId>
+      <RequestorUserId>BPMUSER</RequestorUserId>
+      <RequestorLanguage>E</RequestorLanguage>
+      <RequestorSecurityInfo>secure</RequestorSecurityInfo>
+      <ReturnCode>0000</ReturnCode>
+      <ReturnDesc>saddd</ReturnDesc>
+      <MessageId>%%messageId%%</MessageId>
+      <Extra1>REQ||BPM.123</Extra1>
+      <Extra2>%%extra2%%</Extra2>
+   </EE_EAI_HEADER>
+   <CardServiceEligCheckRequest>
+      <BankId>RAK</BankId>
+      <CIFID>##CIFID##</CIFID>
+      <ACCNumber></ACCNumber>
+      <CardNumber>##CardNumber##</CardNumber>
+      <CardCRNNumber></CardCRNNumber>
+      <CardStatus></CardStatus>
+      <AvailableBalance></AvailableBalance>
+      <AvailableCashBalance></AvailableCashBalance>
+      <RequestAmount>##RequestAmount##</RequestAmount>
+      <OverdueAmount></OverdueAmount>
+      <ServiceType>##ServiceType##</ServiceType>
+      <ServiceSubType>##ServiceSubType##</ServiceSubType>
+      <PaymentType></PaymentType>
+      <PaymentMode>##PaymentMode##</PaymentMode>
+      <RequestFor>##RequestFor##</RequestFor>
+      <OtherBankCode></OtherBankCode>
+      <OtherBankCard>##OtherBankCard##</OtherBankCard>
+      <OtherBankIBAN></OtherBankIBAN>
+	  <OtherBankAcctId>##OtherBankAcctId##</OtherBankAcctId>
+      <BeneficiaryName>##BeneficiaryName##</BeneficiaryName>
+      <MarketingCode>##MarketingCode##</MarketingCode>
+      <FreeField1/>
+      <FreeField2/>
+      <FreeField3/>
+   </CardServiceEligCheckRequest>
+</EE_EAI_MESSAGE>

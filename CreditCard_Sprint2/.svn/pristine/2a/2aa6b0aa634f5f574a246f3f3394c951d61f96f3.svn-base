@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/xdkumar/Desktop/Tarang/Libraries/Common_util.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xdkumar/Desktop/Tarang/Libraries/joda-time-2.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xdkumar/Desktop/Tarang/Libraries/jsf-api.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xdkumar/Desktop/Tarang/Libraries/jsf-impl.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xdkumar/Desktop/Tarang/Libraries/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xdkumar/Desktop/Tarang/Libraries/ngejbcallbroker.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xdkumar/Desktop/Tarang/Libraries/omniforms.jar"/>
+	<classpathentry kind="lib" path="C:/Users/xdkumar/Desktop/Tarang/Libraries/wfdesktop.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

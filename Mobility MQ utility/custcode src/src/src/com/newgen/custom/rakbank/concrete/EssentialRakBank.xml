@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EssentialRakBank version="3.2" currentlyUsed="RakBankIntegration"><!-- Multiple Integrations can be configured -->
+     <RakBank name="RakBankIntegration"> <!--  like these may can be configured.. see IndusIndIntegration example below. -->
+       <Implementation>com.newgen.custom.implementation.RakBankIntegrations</Implementation>  
+       <Config> 
+         <ApiUrlMapping>
+            <Key name="Entity_Details">http://192.168.52.153:9080/webdesktop/resources/scripts/Requestxml_1.jsp</Key>
+            <Key name="CUST_EXPOS_JSP">http://192.168.52.153:9080/webdesktop/resources/scripts/CustExpose_Output.jsp</Key>
+     	</ApiUrlMapping>
+     	
+     	<ProxyDetails>
+            <Key name="IP"></Key>
+            <Key name="PORT"></Key>
+            <Key name="USERNAME"></Key>
+            <Key name="PASSWORD"></Key>
+            <Key name="IS_PROXY_ENABLED"></Key>
+     	</ProxyDetails>
+        <DbMapping>
+        
+			<Key name="SOURCE">DATASOURCE</Key><!--DATASOURCE/DBCONNECTION   -->
+			<Key name="DATASOURCE">java://tabdb</Key><!--  -->
+           <Key name="DBURL">jdbc:sqlserver://192.168.55.128:1433;user=login_ap;password=loginap1234#;database=rakcas_uat</Key>
+           <Key name="DBDRIVER">com.microsoft.sqlserver.jdbc.SQLServerDriver</Key>
+           
+        </DbMapping>
+        <Arraytags>
+          <CUSTOMER_DETAILS>
+           <ParentTag name="">
+           <ChildTag xmlTag="IdIssueDate" apkId="guarantor-id-issue-date"/>
+           </ParentTag>
+            </CUSTOMER_DETAILS>
+        </Arraytags>
+       </Config>
+        </RakBank>
+</EssentialRakBank>

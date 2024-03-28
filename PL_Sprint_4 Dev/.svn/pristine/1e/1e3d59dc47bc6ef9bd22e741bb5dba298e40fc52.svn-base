@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre7"/>
+	<classpathentry kind="lib" path="D:/Shweta/lib/Common_util.jar"/>
+	<classpathentry kind="lib" path="D:/Shweta/lib/joda-time-2.8.2.jar"/>
+	<classpathentry kind="lib" path="D:/Shweta/lib/jsf-api.jar"/>
+	<classpathentry kind="lib" path="D:/Shweta/lib/jsf-impl.jar"/>
+	<classpathentry kind="lib" path="D:/Shweta/lib/log4j-1.2.14.jar"/>
+	<classpathentry kind="lib" path="D:/Shweta/lib/ngejbcallbroker.jar"/>
+	<classpathentry kind="lib" path="D:/Shweta/lib/omniforms.jar"/>
+	<classpathentry kind="lib" path="D:/Shweta/lib/wfdesktop.jar"/>
+	<classpathentry kind="lib" path="D:/Shweta/Documents/Documents/lib/ISPack.jar"/>
+	<classpathentry kind="lib" path="D:/Shweta/Documents/Documents/lib/jdts.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

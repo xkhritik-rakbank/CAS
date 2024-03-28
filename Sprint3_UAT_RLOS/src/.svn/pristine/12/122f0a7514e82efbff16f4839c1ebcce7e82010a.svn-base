@@ -1,0 +1,84 @@
+//----------------------------------------------------------------------------------------------------
+//		NEWGEN SOFTWARE TECHNOLOGIES LIMITED
+//Group						: AP2
+//Product / Project			: RLOS
+//Module					: CAS
+//File Name					: RLOS_Validation.properties
+//Author					: Akshay Gupta
+//Date written (DD/MM/YYYY)	: 06/08/2017
+//Description				: to mention description oof alerts used
+//----------------------------------------------------------------------------------------------------
+
+
+VAL001=Please enter 
+VAL002=EID Genuine is successful
+VAL003=EID Genuine failed
+VAL004=Customer is a New to Bank Customer.
+VAL005=CUSTOMER ELIGIBILITY operation failed.
+VAL006=Existing Customer Details fetched Successfully!
+VAL007=Fetch Customer Details operation failed, try after some time or contact administrator !
+VAL008=Customer is an Existing Customer.
+VAL009=OTP Generated Successfully
+VAL010=OTP Generated failed
+VAL011=SMS Sent Successfully
+VAL012=Failure while sending SMS
+VAL013=OTP validation Successfully
+VAL014=OTP validation failed
+VAL015=WORLD CHECK successful
+VAL016=WORLD CHECK successful....No records found!!!
+VAL017=Error while performing WORLD CHECK
+VAL018=Decision engine integration successful
+VAL019=Critical error occurred Please contact administrator
+VAL020=Customer details saved
+VAL021=Product details Saved
+VAL022=Guarantor Details Saved
+VAL023=Income Details Salaried Saved
+VAL024=Income Details for SelfEmployed Saved
+VAL025=Company Details Saved
+VAL026=Liability Details Saved
+VAL027=Employment Details Saved
+VAL028=Eligibilty and Product Information Saved
+VAL029=Miscellaneous Fields Saved
+VAL030=Address Details Saved
+VAL031=Contact Details Saved
+VAL032=Card Details Saved
+VAL033=Supplement Card Details Saved
+VAL034=FATCA Fields Saved
+VAL035=KYC Fields Saved
+VAL036=OECD Fields Saved
+VAL037=Reference Details Saved
+VAL038=Service Request information Saved
+VAL039=BTC information Saved
+VAL040=DDS information Saved
+VAL041=SI information Saved
+VAL042=RVC information Saved
+VAL043=Incoming Documents Saved 
+VAL044=Decision History Saved
+VAL045=Notepad Details Saved
+VAL046=Error While Fetch Customer Details.
+VAL047=Error occured while performing Fetch Customer details, Kindly contact administrator or contact after sometime
+VAL048=Account Creation is successful!!
+VAL049=Duplicate employer code is selected and the original record to be selected
+VAL050=4
+VAL051=This is a Staff Customer, Kindly try for some other Customer
+VAL052=As you have not attached the Mandatory Document fill the Remarks
+VAL053=New Customer Request operation failed, try after some time or contact administrator!!!
+VAL054=New Account Creation Failed, try after some time or contact administrator!!!
+VAL055=CIF And Account Creation is successful!!
+VAL056=CIF Creation for Guarantor is successful!!
+VAL057=This product already exist. Please change the product or reject the case.
+VAL058=Please use NTB Cases for sprint 1.
+VAL059=Invalid session !
+VAL060=Some Error occured in this operation please contact administrator or re-try aftersome time
+VAL061=Eligible for Card limit should not be greater or lower than final limit!
+VAL062=Please Select Card From Eligibile For Card Grid!
+VAL063=No Card is Selected!
+VAL064=Card is Already Added!
+VAL065=Current Limit is less than Combined Existing Limit
+VAL066=Customer is existing, but Primary CIF will be created as the customer is only supplementary.
+VAL069=Call generated successfully.
+VAL070=Call failed
+VAL071= Maximum OTP Generation Limit Exhausted.
+VAL072= Maximum OTP Validation Limit Exhausted.
+VAL073=Max Amount can take for this service is
+VAL074=Please enter the card limit on selecting the card

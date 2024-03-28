@@ -1,0 +1,107 @@
+var RLOS_CUSTOMER='cmplx_Customer_EmiratesID#Emirates ID,cmplx_Customer_FIrstNAme#FIrstNAme,cmplx_Customer_LAstNAme#LAstNAme,cmplx_Customer_DOb#Date Of Birth,cmplx_Customer_Nationality#Nationality,cmplx_Customer_MobNo#Mobile No,cmplx_Customer_PAssportNo#Passport No,cmplx_Customer_CIFNO#CIF NO,cmplx_Customer_Title#Title,cmplx_Customer_gender#Gender,cmplx_Customer_age#Age,cmplx_Customer_IdIssueDate#ID Issue Date,cmplx_Customer_EmirateIDExpiry#EMirate ID Expiry Date,cmplx_Customer_VisaNo#Visa No,cmplx_Customer_EMirateOfVisa#EMirate Of Visa,cmplx_Customer_PassPortExpiry#Passport Expiry Date,cmplx_Customer_ResidentNonResident#ResidentNonResident,cmplx_Customer_SecNAtionApplicable#Secondary NAtionality Applicable,cmplx_Customer_GCCNational#GCC National,cmplx_Customer_CustomerCategory#Customer Category,cmplx_Customer_yearsInUAE#years In UAE,cmplx_Customer_MAritalStatus#MArital Status,cmplx_Customer_EmirateOfResidence#Emirate Of Residence,cmplx_Customer_COuntryOFResidence#COuntry OF Residence';
+
+var RLOS_PRODUCT='cmplx_Product_cmplx_ProductGrid_GRID#Product Grid';
+
+var RLOS_Guarantor='cmplx_GuarantorDetails_cmplx_GuarantorGrid_GRID#Guarantor Grid';
+
+var RLOS_GUARANTOR_FetchDetails='GuarantorDetails_guardianCif#Guarantor CIF Available,GuarantorDetails_apptype#Applicant Type,cif#CIF No.,eid_gua#Emirate ID,GuarantorDetails_nationality#Nationality,dob#Date of Birth,mobNo# Mobile No.,passpNo#Passport No.,title#Title,Fname#First Name,lname#Last Name,GuarantorDetails_gender#Gender,age_gua#Age,GuarantorDetails_email#Email ID,Guarantor_Designation#Designation';
+
+var RLOS_INCOME_SALARIED='cmplx_IncomeDetails_Basic#Basic Salary,cmplx_IncomeDetails_grossSal#gross Salary,cmplx_IncomeDetails_totSal#Total Salary,cmplx_IncomeDetails_Accomodation#Accomodation,cmplx_IncomeDetails_SalaryDay#Salary Day';
+
+var RLOS_INCOME_SELFEMPLOYED='cmplx_IncomeDetails_AvgBalFreq#Average Balance Frequency,cmplx_IncomeDetails_AvgBal#Average Balance Value,cmplx_IncomeDetails_CreditTurnoverFreq#Credit Turnover Frequency,cmplx_IncomeDetails_CredTurnover#Credit Turnover Value,cmplx_IncomeDetails_AvgCredTurnoverFreq#Average Credit Turnover Frequency,cmplx_IncomeDetails_AvgCredTurnover#Average Credit Turnover Value,cmplx_IncomeDetails_AnnualRentFreq#Annual Rent Frequency,cmplx_IncomeDetails_BankStatFrom#Bank Statements From,cmplx_IncomeDetails_BankStatFromDate#Bank Statements From Date,cmplx_IncomeDetails_BankStatToDate#Bank Statements To Date,cmplx_IncomeDetails_NoOfMonthsOtherbankStat2#No Of Months Other bank Statements';
+
+var RLOS_COMPANYDETAILS='cmplx_CompanyDetails_cmplx_CompanyGrid_GRID#Company Grid';
+
+var RLOS_AUTHORISEDSIGNATORYDETAILS='cmplx_CompanyDetails_cmplx_CompanyGrid_cmplx_GR_AuthorizedSignDetails_GRID#Authorized Signatory Grid';
+
+var RLOS_PARTNERDETAILS='cmplx_CompanyDetails_cmplx_CompanyGrid_cmplx_partnerGrid_GRID#Partner Grid';
+
+var RLOS_EMPLOYMENT='cmplx_EmploymentDetails_ApplicationCateg#Application Category,cmplx_EmploymentDetails_targetSegCode#target Segment Code,cmplx_EmploymentDetails_EmpName#Employer Name,cmplx_EmploymentDetails_EMpCode#Employment Code,cmplx_EmploymentDetails_Emp_Type#Employment Type,cmplx_EmploymentDetails_CurrEmployer#Current Employer Category,cmplx_EmploymentDetails_EmpContractType#Employment Contract Type,cmplx_EmploymentDetails_EmpIndusSector#Employment Industry Sector,cmplx_EmploymentDetails_Indus_Macro#Employment Industry MAcro,cmplx_EmploymentDetails_Indus_Micro#Employment Industry Micro,cmplx_EmploymentDetails_EmployerType#Employer Type,cmplx_EmploymentDetails_Designation#Designation,cmplx_EmploymentDetails_DesigVisa#Designation as per Visa,cmplx_EmploymentDetails_EmirateOfWork#Emirate Of Work,cmplx_EmploymentDetails_EmpStatus#Employment Status';
+//cmplx_EmploymentDetails_DOJ#Date Of Joining,
+
+
+var RLOS_NEP_EMPLOYMENT='cmplx_EmploymentDetails_ApplicationCateg#Application Category,cmplx_EmploymentDetails_targetSegCode#target Segment Code,cmplx_EmploymentDetails_NepType#Nep Type,cmplx_EmploymentDetails_EmpName#Employer Name,cmplx_EmploymentDetails_EMpCode#Employment Code, cmplx_EmploymentDetails_Emp_Type#Employment Type,cmplx_EmploymentDetails_CurrEmployer#Current Employer Category,cmplx_EmploymentDetails_EmpContractType#Employment Contract Type,cmplx_EmploymentDetails_EmpIndusSector#Employment Industry Sector,cmplx_EmploymentDetails_Indus_Macro#Employment Industry MAcro,cmplx_EmploymentDetails_Indus_Micro#Employment Industry Micro,cmplx_EmploymentDetails_Designation#Designation,cmplx_EmploymentDetails_DesigVisa#Designation as per Visa,cmplx_EmploymentDetails_DOJ#Date Of Joining,cmplx_EmploymentDetails_LOS#LOS,cmplx_EmploymentDetails_EmirateOfWork#Emirate Of Work,cmplx_EmploymentDetails_HeadOfficeEmirate#Head Office Emirate';
+
+
+var RLOS_Freezone_EMPLOYMENT='cmplx_EmploymentDetails_ApplicationCateg#Application Category,cmplx_EmploymentDetails_targetSegCode#target Segment Code,cmplx_EmploymentDetails_EmpName#Employer Name,cmplx_EmploymentDetails_Emp_Type#Employment Type,cmplx_EmploymentDetails_CurrEmployer#Current Employer Category,cmplx_EmploymentDetails_EmpContractType#Employment Contract Type,cmplx_EmploymentDetails_EmpIndusSector#Employment Industry Sector,cmplx_EmploymentDetails_Indus_Macro#Employment Industry MAcro,cmplx_EmploymentDetails_Indus_Micro#Employment Industry Micro,cmplx_EmploymentDetails_FreezoneName#Freezone Name,cmplx_EmploymentDetails_Designation#Designation,cmplx_EmploymentDetails_DesigVisa#Designation as per Visa,cmplx_EmploymentDetails_DOJ#Date Of Joining,cmplx_EmploymentDetails_LOS#LOS,cmplx_EmploymentDetails_EmirateOfWork#Emirate Of Work,cmplx_EmploymentDetails_HeadOfficeEmirate#Head Office Emirate';
+
+
+var RLOS_Tenancy_EMPLOYMENT='cmplx_EmploymentDetails_ApplicationCateg#Application Category,cmplx_EmploymentDetails_targetSegCode#target Segment Code,cmplx_EmploymentDetails_EmpName#Employer Name,cmplx_EmploymentDetails_Emp_Type#Employment Type,cmplx_EmploymentDetails_CurrEmployer#Current Employer Category,cmplx_EmploymentDetails_EmpContractType#Employment Contract Type,cmplx_EmploymentDetails_EmpIndusSector#Employment Industry Sector,cmplx_EmploymentDetails_Indus_Macro#Employment Industry MAcro,cmplx_EmploymentDetails_Indus_Micro#Employment Industry Micro,cmplx_EmploymentDetails_Designation#Designation,cmplx_EmploymentDetails_DOJ#Date Of Joining,cmplx_EmploymentDetails_LOS#LOS,cmplx_EmploymentDetails_EmirateOfWork#Emirate Of Work,cmplx_EmploymentDetails_HeadOfficeEmirate#Head Office Emirate,cmplx_EmploymentDetails_tenancntrct#Tenancy Contract Emirate';
+
+var RLOS_EMpId_EMPLOYMENT='cmplx_EmploymentDetails_ApplicationCateg#Application Category,cmplx_EmploymentDetails_targetSegCode#target Segment Code,cmplx_EmploymentDetails_EmpName#Employer Name,cmplx_EmploymentDetails_Emp_Type#Employment Type,cmplx_EmploymentDetails_CurrEmployer#Current Employer Category,cmplx_EmploymentDetails_EmpContractType#Employment Contract Type,cmplx_EmploymentDetails_EmpIndusSector#Employment Industry Sector,cmplx_EmploymentDetails_Indus_Macro#Employment Industry MAcro,cmplx_EmploymentDetails_Indus_Micro#Employment Industry Micro,cmplx_EmploymentDetails_IndusSeg#Industry Segment,cmplx_EmploymentDetails_Designation#Designation,cmplx_EmploymentDetails_DOJ#Date Of Joining,cmplx_EmploymentDetails_LOS#LOS,cmplx_EmploymentDetails_EmirateOfWork#Emirate Of Work,cmplx_EmploymentDetails_HeadOfficeEmirate#Head Office Emirate';
+		
+var RLOS_LIABILITY='cmplx_Liability_New_TAI#TAI,cmplx_Liability_New_paid_installments#No. Of Paid Installments,cmplx_Liability_New_DBRNet#DBR Net Salary,cmplx_Liability_New_AggrExposure#Aggregate Exposure';//cmplx_Liability_New_cmplx_LiabilityAdditionGrid_GRID#Liability Addition Grid		
+	
+var RLOS_ELIGIBILITY_BTC='cmplx_EligibilityAndProductInfo_FinalLimit#Total Final Limit';
+
+var RLOS_ELIGIBILITY_IM='cmplx_EligibilityAndProductInfo_FinalDBR#Final DBR,cmplx_EligibilityAndProductInfo_FinalTAI#Final TAI,cmplx_EligibilityAndProductInfo_InterestRate#Interest Rate,cmplx_EligibilityAndProductInfo_EMI#EMI,cmplx_EligibilityAndProductInfo_Tenor#Tenor,cmplx_EligibilityAndProductInfo_FinalLimit#Total Final Limit,cmplx_EligibilityAndProductInfo_RepayFreq#Repayment Frequency,cmplx_EligibilityAndProductInfo_FirstRepayDate#First Repayment Date,cmplx_EligibilityAndProductInfo_InterestType#InterestType,cmplx_EligibilityAndProductInfo_MaturityDate#Maturity Date';
+
+var RLOS_ELIGIBILITY_SAL='cmplx_EligibilityAndProductInfo_FinalDBR#Final DBR,cmplx_EligibilityAndProductInfo_FinalTAI#Final TAI,cmplx_EligibilityAndProductInfo_FinalLimit#Total Final Limit';
+
+var RLOS_ELIGIBILITY='cmplx_EligibilityAndProductInfo_FinalDBR#Final DBR,cmplx_EligibilityAndProductInfo_FinalTAI#Final TAI,cmplx_EligibilityAndProductInfo_FinalLimit#Total Final Limit,cmplx_EligibilityAndProductInfo_InterestRate#Interest Rate,cmplx_EligibilityAndProductInfo_EMI#EMI,cmplx_EligibilityAndProductInfo_Tenor#Tenor,cmplx_EligibilityAndProductInfo_NetPayout#Net Payout,cmplx_EligibilityAndProductInfo_takeoverBank#Take Over Bank,cmplx_EligibilityAndProductInfo_TakeoverAMount#Takeover Amount,cmplx_EligibilityAndProductInfo_instrumenttype#Instrument Type,cmplx_EligibilityAndProductInfo_RepayFreq#Repayment Frequency,cmplx_EligibilityAndProductInfo_FirstRepayDate#First Repayment Date,cmplx_EligibilityAndProductInfo_InterestType#InterestType,cmplx_EligibilityAndProductInfo_BaseRateType#Base Rate Type,cmplx_EligibilityAndProductInfo_MArginRate#MArgin Rate,cmplx_EligibilityAndProductInfo_BAseRate#BAse Rate,cmplx_EligibilityAndProductInfo_ProdPrefRate#Product Preference Rate,cmplx_EligibilityAndProductInfo_FinalInterestRate#Final Interest Rate,cmplx_EligibilityAndProductInfo_MaturityDate#Maturity Date,cmplx_EligibilityAndProductInfo_LPF#LPF,cmplx_EligibilityAndProductInfo_LPFAmount#LPF Amount,cmplx_EligibilityAndProductInfo_Insurance#Insurance %,cmplx_EligibilityAndProductInfo_InsuranceAmount#Insurance Amount';
+					
+	
+var RLOS_ADDRESS='cmplx_AddressDetails_cmplx_AddressGrid_GRID#Address Grid';
+
+var RLOS_CONTACTDETAILS='AlternateContactDetails_MobileNo1#Mobile No Primary,AlternateContactDetails_MobNo2#Mobile No Secondary,AlternateContactDetails_HomeCOuntryNo#Home Country No,AlternateContactDetails_OfficeNo#Office contact No,AlternateContactDetails_Email1#Email Primary,AlternateContactDetails_eStatementFlag#E Satement Flag,AlternateContactDetails_carddispatch#Card Dispatch';
+
+var RLOS_REFERENCE='cmplx_ReferencDetails_Cmplx_gr_ReferenceDetails_GRID#Reference Grid';
+
+var RLOS_BRANCH_CONTACTDETAILS='AlternateContactDetails_MobileNo1#Mobile No Primary,AlternateContactDetails_MobNo2#Mobile No Secondary,AlternateContactDetails_HomeCOuntryNo#Home Country No,AlternateContactDetails_OfficeNo#Office contact No,AlternateContactDetails_Email1#Email Primary,AlternateContactDetails_eStatementFlag#E Satement Flag,AlternateContactDetails_carddispatch#Card Dispatch,AlternateContactDetails_custdomicile#Customer Domicile Branch';
+
+	
+var RLOS_CARDDETAILS='cmplx_CardDetails_CardEmbossingName#Card Embossing Name,cmplx_CardDetails_CompanyEmbossingName#Company Embossing Name,cmplx_CardDetails_CharityOrg#Charity Organisation,cmplx_CardDetails_CharityAmount#Charity Amount,cmplx_CardDetails_SendStatTo#Send Statement To';
+
+var RLOS_SUPPLEMENTARYCARDDETAILS='SupplementCardDetails_cmplx_SupplementGrid_GRID#Supplement Grid';
+				
+var RLOS_FATCA='cmplx_FATCA_USRelation#US Relation,cmplx_FATCA_TINNo#TIN No,cmplx_FATCA_TypeOFRelation#Type OF Relation,cmplx_FATCA_DocsAvail#Docs Available,cmplx_FATCA_SignedDate#Signed Date,cmplx_FATCA_ExpiryDate#Expiry Date,cmplx_FATCA_DocsCollec#Docs Collected,cmplx_FATCA_ControllingPersonUSRel#Controlling Person US Relation,cmplx_FATCA_Category#Category';
+
+var RLOS_KYC='cmplx_KYC_KYCHeld#KYC Held,cmplx_KYC_PEP#PEP';
+
+var RLOS_OECD='cmplx_OECD_cmplx_GR_OecdDetails_GRID#OECD Grid';
+
+var RLOS_SERVICEREQUEST_BTC='cmplx_CC_Loan_CcNo#Credit Card No,cmplx_CC_Loan_TransMode#Transfer Mode,cmplx_CC_Loan_BankName#Bank NAme ,cmplx_CC_Loan_BenefNAme#Beneficiary Name,cmplx_CC_Loan_NAmeOnCard#Name on Card,cmplx_CC_Loan_Tenure#Tenor,cmplx_CC_Loan_Amount#Amount,cmplx_CC_Loan_DispatchChannel#Dispatch Channel,cmplx_CC_Loan_MarketingCode#MArketing Code,cmplx_CC_Loan_Date#Date,cmplx_CC_Loan_IBan#IBAN,cmplx_CC_Loan_SourceCode#Source Code,cmplx_CC_Loan_TotalBalXfer#Total Bal Transfer,cmplx_CC_Loan_appstatus#Application Status,cmplx_CC_Loan_approvalcode#Approval Code,cmplx_CC_Loan_mchequeno#Manager Cheque Number,cmplx_CC_Loan_mchequeDate#Manager Cheque Date,cmplx_CC_Loan_mchequestatus#Manager Cheque Status';//,cmplx_CC_Loan_Percentage#Percentage';
+
+var RLOS_SERVICEREQUEST_DDS='cmplx_CC_Loan_DDSExecDay#DDS Execution Day,cmplx_CC_Loan_DDSIBanNo#DDS IBan No,cmplx_CC_Loan_DDSStartdate#DDS Start date,cmplx_CC_Loan_DDSBankAName#DDS Bank Name,cmplx_CC_Loan_DDSEntityNo#Debit Entity No';
+
+var RLOS_SERVICEREQUEST_SI='cmplx_CC_Loan_AccNo#Account Number,cmplx_CC_Loan_ModeOfSI#Mode Of SI,cmplx_CC_Loan_DueDate#Due Date,cmplx_CC_Loan_SI_Percentage#SI Percentage,cmplx_CC_Loan_StartMonth#Start Month,cmplx_CC_Loan_FlatAMount#Flat AMount,cmplx_CC_Loan_SIDate#SI Date';
+
+var RLOS_BT='cmplx_CC_Loan_cmplx_btc_GRID#Services Grid';//added by akshay on 11/11/17 for checking bt grid on save
+var CC_DDS_GRID='cmplx_CC_Loan_cmplx_dds_GRID#Services Grid';//added by shweta for checking dds grid on save
+var CC_SI_GRID='cmplx_CC_Loan_cmplx_si_GRID#Services Grid';//added by shweta for checking si grid on save
+var CC_RVC_GRID='cmplx_CC_Loan_cmplx_rvc_GRID#Services Grid';//added by shweta for checking rvc grid on save
+
+//added by akshay on 15/9/17 to validate BT as per  FSD
+var CC_Loan_BT ='creditcardNo#Credit card Number,transferMode#Transfer Mode,bankName#Bank Name,nameOnCard#Name On Card,amount#Amount,marketingCode#Marketing Code,date#Date,AppStatus#Application Status,approvalCode#Approval Code';
+
+var CC_Loan_CCC = 'transferMode#Transfer Mode,benificiaryName#Beneficiary Name,nameOnCard#Name On Card,amount#Amount,dispatchChannel#Dispatch Channel,marketingCode#Marketing Code,date#Date,AppStatus#Application Status';
+
+var CC_Loan_LOC = 'transferMode#Transfer Mode,benificiaryName#Beneficiary Name,nameOnCard#Name On Card,tenor#Tenor,amount#Amount,marketingCode#Marketing Code,date#Date,iban#IBAN,AppStatus#Application Status,approvalCode#Approval Code';
+//pcasp-1633
+var CC_Loan_SmartCash_S = 'transferMode#Transfer Mode,benificiaryName#Beneficiary Name,nameOnCard#Name On Card,amount#Amount,marketingCode#Marketing Code,date#Date,AppStatus#Application Status,iban#IBAN,bankName#Bank Code,approvalCode#Approval Code';
+var CC_Loan_SmartCash_A = 'transferMode#Transfer Mode,benificiaryName#Beneficiary Name,nameOnCard#Name On Card,amount#Amount,marketingCode#Marketing Code,date#Date,AppStatus#Application Status,approvalCode#Approval Code';
+var CC_Loan_SmartCash_C = 'transferMode#Transfer Mode,benificiaryName#Beneficiary Name,nameOnCard#Name On Card,amount#Amount,marketingCode#Marketing Code,date#Date,AppStatus#Application Status,approvalCode#Approval Code';
+
+var CC_Loan_cheque = 'chequeNo#Manager Cheque No,chequeDate#Manager Cheque Date,chequeStatus#Manager Cheque Status';
+
+var CC_Loan_DDS = 'cmplx_CC_Loan_DDSMode#DDS Mode,cmplx_CC_Loan_Percentage#Percentage,cmplx_CC_Loan_DDSAmount#DDS Flat Amount,cmplx_CC_Loan_DDSExecDay#DDS Execution Day,cmplx_CC_Loan_DDSIBanNo#Debit IBAN No.,cmplx_CC_Loan_DDSStartdate#DDS Start Date,cmplx_CC_Loan_DDSBankAName#Debit Bank Name,cmplx_CC_Loan_DDSEntityNo#Debit Bank Entity No';
+
+var CC_Loan_SI = 'cmplx_CC_Loan_AccNo#Account No.,cmplx_CC_Loan_ModeOfSI#Mode of SI,cmplx_CC_Loan_DueDate#Due Date,cmplx_CC_Loan_SI_Percentage#Percentage,cmplx_CC_Loan_StartMonth#Start month,cmplx_CC_Loan_FlatAMount#Flat Amount,cmplx_CC_Loan_SIDate#SI Date';
+
+var CC_Loan_RVC = 'cmplx_CC_Loan_VPSFlag#VPS Flag,cmplx_CC_Loan_VPSPAckage#VPS Package,cmplx_CC_Loan_VPSSourceCode#VPS Source Code,cmplx_CC_Loan_VPSSaleMode#VPS Sales Mode';
+//pcasp-1377
+var CC_Loan_CCC_S = 'transferMode#Transfer Mode,benificiaryName#Beneficiary Name,nameOnCard#Name On Card,amount#Amount,marketingCode#Marketing Code,date#Date,AppStatus#Application Status,approvalCode#Approval Code,CC_Loan_Bank_code#Bank Code,iban#IBAN Number,cmplx_CC_Loan_BTC_CardProduct#Card Product,bankName#Bank Name,PaymentPurpose#Payment Purpose';
+//var CC_Loan_CCC_C = 'transferMode#Transfer Mode,benificiaryName#Beneficiary Name,nameOnCard#Name On Card,amount#Amount,dispatchChannel#Dispatch Channel,marketingCode#Marketing Code,date#Date,AppStatus#Application Status,approvalCode#Approval Code,CC_Loan_Bank_code#Bank Code,chequeNo#Manager Cheque No,chequeDate#Manager Cheque Date,chequeStatus#Manager Cheque Status,cmplx_CC_Loan_BTC_CardProduct#Card Product';
+var CC_Loan_CCC_C = 'transferMode#Transfer Mode,benificiaryName#Beneficiary Name,nameOnCard#Name On Card,amount#Amount,dispatchChannel#Dispatch Channel,marketingCode#Marketing Code,date#Date,AppStatus#Application Status,approvalCode#Approval Code,CC_Loan_Bank_code#Bank Code,cmplx_CC_Loan_BTC_CardProduct#Card Product,PaymentPurpose#Payment Purpose';
+var CC_Loan_CCC_A = 'transferMode#Transfer Mode,benificiaryName#Beneficiary Name,nameOnCard#Name On Card,amount#Amount,marketingCode#Marketing Code,date#Date,AppStatus#Application Status,approvalCode#Approval Code,CC_Loan_Bank_code#Bank Code,CC_Loan_Bank_code#Bank Code,cmplx_CC_Loan_BTC_CardProduct#Card Product,PaymentPurpose#Payment Purpose';
+
+
+//ended by akshay on 15/9/17 to validate BT as per  FSD
+
+
+var RLOS_NEP_EMPLOYMENT='cmplx_EmploymentDetails_ApplicationCateg#Application Category,cmplx_EmploymentDetails_targetSegCode#target Segment Code,cmplx_EmploymentDetails_NepType#Nep Type,cmplx_EmploymentDetails_EmpName#Employer Name,cmplx_EmploymentDetails_EMpCode#Employment Code, cmplx_EmploymentDetails_Emp_Type#Employment Type,cmplx_EmploymentDetails_CurrEmployer#Current Employer Category,cmplx_EmploymentDetails_EmpContractType#Employment Contract Type,cmplx_EmploymentDetails_EmpIndusSector#Employment Industry Sector,cmplx_EmploymentDetails_Indus_Macro#Employment Industry MAcro,cmplx_EmploymentDetails_Indus_Micro#Employment Industry Micro,cmplx_EmploymentDetails_Designation#Designation,cmplx_EmploymentDetails_DOJ#Date Of Joining,cmplx_EmploymentDetails_LOS#LOS,cmplx_EmploymentDetails_EmirateOfWork#Emirate Of Work,cmplx_EmploymentDetails_HeadOfficeEmirate#Head Office Emirate';
+//ADDED by yash on 1/9/2017
+
+var Notepad_Details='cmplx_NotepadDetails_cmplx_notegrid_GRID#Notepad Grid';
+
+var RLOS_Notepad = 'NotepadDetails_notedesc#Note Description,NotepadDetails_notecode#Note Code,NotepadDetails_noteDate#Note Date,NotepadDetails_user#User';

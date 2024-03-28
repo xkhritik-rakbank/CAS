@@ -1,0 +1,124 @@
+val001=Employment Details Saved
+val002=Decision History Details Saved
+val003=Notepad Details Saved
+val004=Decision engine integration successful
+val005=Critical error occurred Please contact administrator
+val006=Decision engine integration successful
+val007=Customer detail verification saved
+val008=Business detail verification saved
+val009=Home country verification saved
+val010=Residence verification saved
+val011=Guarantor verification saved
+val012=Reference detail verification saved
+val013=Office verification details saved
+val014=Loan and Card details saved
+val015=Smart check details saved
+val016=-OECD Details Saved
+val017=Customer Details Saved
+val018=Product Details Saved
+val019=Liability Details Saved
+val020=Employment Details Saved
+val021=Eligibility Details Saved
+val022=Loan Details Saved
+val023=FATCA Details Saved
+val024=KYC Details Saved
+val025=Account Verification operation Failed, Please try after some time or contact administrator
+val026=Account Activation operation Failed, Please try after some time or contact administrator
+val027=Account Updated Successfully !
+val028=Account Update operation Failed, Please try after some time or contact administrator
+val029=Error in fetch Customer details operation
+val030=Customer is a New to Bank Customer.
+val031=Customer is an Existing Customer.
+val032=Part match sucessfull!
+val033=Error while performing Part match
+val034=Error while setting data in finacle customer info grid
+val035=Disbursal Details Saved
+val036=Loan can't be created as No current account is maintained for this Customer
+val037=Contract created sucessfully with contract id: 
+val038=Error in Contract creation operation, kindly try after some time or contact administrator.
+val039=Customer verified Sucessfully
+val040=Customer status Enquiry Failed, Please try after some time or contact administrator
+val041=Customer Updated Successful!
+val042=Customer Update operation failed, Please try after some time or contact administrator
+val043=Customer UnLock operation failed, Please try after some time or contact administrator
+val044=Customer status Enquiry Failed, Please try after some time or contact administrator
+val045=Reference Details Saved
+val046=Initial Money Deposit Saved
+val047=Data Successfully set in Finacle Customer Info Grid
+VAL051=This is a Staff Customer, Kindly try for some other Customer
+val048=Duplicate employer code is selected and the original record to be selected
+val052=Compliance Details Saved
+val053=Incoming Document Saved
+val054=Initial Money Deposit Saved
+val055=Supplementary Card Details Saved
+val056=Mol Details Saved
+val057=Risk Rating Details Saved
+val058=World Check Details Saved
+val059=Income Details Saved
+val060=CIF Locked successfully!!!!
+val061=CIF Unlocked successfully!!!
+val062=Card Details Saved
+val063=Address Details saved successfully!!!
+val064=Contact Details Saved
+VAL065=Customer Details  Part Match failed, Please try after some time or contact administrator!!
+val066=Refer History Saved
+val067= Part Match saved successfully
+VAL075=DDS information Saved
+VAL076=SI information Saved
+VAL077=RVC information Saved
+val077=CIF for supplementary is created
+val078=CIF Creation failed!!
+val079=Error while generating ECRN/CRN No, Please try after some time or contact administrator!!!
+val080=ECRN/CRN No generated successfully.
+val081=CIF Added successfully!
+val082=Existing Customer Details fetched Successfully
+val083=Details Saved Successfully
+val084=Finacle Customer Information Saved
+val085=Finacle Core saved successfully!!!
+val086=Card Creation Saved Successfully!
+VAL087=Invalid session !
+VAL088=Some Error occured in this operation please contact administrator or re-try aftersome time
+VAL090=BTC information Saved
+VAL105=Customer Verification saved!
+VAL110=Application Cannot be processed as no card selected in eligible grid.
+VAL111=No Card is Selected!
+VAL112=Card is Already Added!
+VAL113=Please Select Card From Eligibile For Card Grid!
+VAL114=Current Limit is less than Combined Existing Limit
+VAL115=This CIF was created for an supplementary card so Cannot be added to the application. 
+VAL116=ECRN is already generated for this case so Cannot perform this action.
+VAL106=Exceptional case alert verification saved!
+VAL107=Field visit saved!
+VAL108=CheckList details saved!
+VAL500=Employment Verification Details Saved
+VAL501=Banking Check Details Saved
+VAL113=Please Select Card From Eligibile For Card Grid!
+val049=Customer Lock operation failed, Please try after some time or contact administrator
+VAL520=Total Risk Score Calculated successfully!!
+VAL521=Error while calculating total risk score
+VAL120=Reject Inquiry Saved
+VAL118=FIRCO CHECK successful
+VAL119=FIRCO CHECK successful....No records found!!!
+VAL117=Error while performing FIRCO CHECK
+VAL121=Please Refresh Firco Details.
+VAL123=Max Amount can take for this service is
+VAL506=Company Mismatch Information Saved
+VAL505=Details Saved
+val1000=Incoming Document details saved
+VAL1001=Record identified in FIRCO check. Please action accordingly!!
+VAL1002=This is a High Risk Case
+VAL1003=Please refer the WI to Compliance as the Risk Rating is high
+MCQ_Email_Issuance_Conventional=<html><body><p style=\"font-size:10px; font-family:verdana; color:rgb(0,0,0);\">Dear Customer,<br><br>Please note that the Manager CHQ for your request no replaceWIName to settle your outstanding liabilities with replaceBank_Name is issued.<br><br>Our representative will call you for an appointment within 3 working days, if required, to complete the takeover process.<br><br>Assuring you of our best services at all times.\n<br><br>Regards,\n<br>RAKBANK\n<br><br>* This is an automated email, please do not reply. </p></body></html>
+
+STL_Email = <html><body><p style=\"font-size:10px; font-family:verdana; color:rgb(0,0,0);\">Dear Customer,<br><br>Please note that your Salary Transfer Letter (STL) is received by RAKBANK and 25% of the loan amount approved by the bank will be released to your account.<br><br>If the hold amount is equal or less than the installment (EMI) amount, no fund will be released in to your account.<br><br>Once your first salary is credited into your account, the remaining loan/hold amount will be released.<br><br>Assuring you of our best services at all times.\n<br><br>Regards,\n<br>RAKBANK\n<br><br>* This is an automated email, please do not reply. </p></body></html>
+
+NLC_Email=<html><body><p style=\"font-size:10px; font-family:verdana; color:rgb(0,0,0);\">Dear Customer,<br><br>Please note that the No Liability Certificate for your request no replaceWIName from replaceBank_Name is received.<br><br>Our representative will call you for an appointment within 2 working days, to handover the No Liability Certificate (from the primary bank only) at your place of work for issuance of Salary Transfer Letter from your employer.<br><br>Assuring you of our best services at all times.\n<br><br>Regards,\n<br>RAKBANK\n<br><br>* This is an automated email, please do not reply. </p></body></html>
+	                                    
+MCQ_Email_Issuance_Islamic=<html><body><p style=\"font-size:10px; font-family:verdana; color:rgb(0,0,0);\">Dear Customer,<br><br>Please note that the Manager CHQ for your request no replaceWIName to settle your outstanding liabilities with replaceBank_Name is issued. <br><br>Our representative will call you for an appointment, if required, to complete the takeover process.<br><br>Assuring you of our best services at all times.\n<br><br>Regards,\n<br>RAKBANK\n<br><br>* This is an automated email, please do not reply. </p></body></html>
+	                                    
+MCQ_SMS=The Manager CHQ to settle your outstanding liabilities is issued. Our representative will call you, if required,  to complete the takeover process.
+NLC_SMS=The No Liability Certificate is received. Our representative will call you, if required, to provide the same at your place of work.
+STL_SMS=Your STL is received and 25% of the finance amount will be released if applicable. Upon salary credit, the remaining finance/hold amount will be released.
+
+
+<html><body><p style=\"font-size:10px; font-family:verdana; color:rgb(0,0,0);\">Dear Customer,<br><br>  Your request no " +formObject.getNGValue("PORTAL_REF_NUMBER")+ " for a "+prod_desc+ " is pending for "+Pending_reasons+".<br><br>Kindly provide the required documentation/information through the portal by entering your mobile number. Also you can provide the requirements by clicking on the below link <br><a href=\"https://rakbank.ae/wps/portal/retail-banking/cards/personal/emirates-skywards-world-elite-card/apply-now\">https://rakbank.ae/wps/portal/retail-banking/cards/personal/emirates-skywards-world-elite-card/apply-now</a><br><br>Please ensure that you provide the documentation/information within 7 working days to take forward your request and avoid cancellation.<br><br>For any queries, please call us on 04 2130000.\n<br><br>"

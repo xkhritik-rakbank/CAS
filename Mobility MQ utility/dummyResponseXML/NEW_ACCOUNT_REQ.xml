@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EE_EAI_MESSAGE> 
+<EE_EAI_HEADER> 
+<MsgFormat>NEW_ACCOUNT_REQ</MsgFormat> 
+<MsgVersion>0001</MsgVersion> 
+<RequestorChannelId>EBC.INB/RequestorChannelId> 
+<RequestorUserId>RAKUSER</RequestorUserId> 
+<RequestorLanguage>E</RequestorLanguage> 
+<RequestorSecurityInfo>secure</RequestorSecurityInfo> 
+<ReturnCode>000</ReturnCode> 
+<ReturnDesc>Success</ReturnDesc> 
+<MessageId>123123453</MessageId> 
+<Extra1>REP||SHELL.JOHN</Extra1> 
+<Extra2>YYYY-MM-DDThh:mm:ss.mmm+hh:mm</Extra2> 
+</EE_EAI_HEADER> 
+<AcccountResponse> 
+<BankId> RAK </BankId> 
+<BranchId>003 </BranchId> 
+<CustomerId>1221342</CustomerId> 
+<CurrencyCode>AED</CurrencyCode> 
+<EligibilityStatus> </EligibilityStatus> 
+<EligibilityStatusCode></EligibilityStatusCode> 
+<EligibilityStatusDesc> </EligibilityStatusDesc> 
+<NewAcid>0001100002102</NewAcid>
+<IBANNumber >0001987654321400</IBANNumber >
+<FirstName>John</FirstName> <MidName>Fredrick</MidName> <LastName>Mathews</LastName> <DocType>PPT</DocType> <DocRefNum>T5777G66</DocRefNum> <MotherMaidenName>LISA</MotherMaidenName> <AcctStat>A</AcctStat> <AcctSchemeCode>ACNP</AcctSchemeCode> 
+<AcctSchemeType>SBA</AcctSchemeType> 
+</AcccountResponse > 
+</EE_EAI_MESSAGE>
+

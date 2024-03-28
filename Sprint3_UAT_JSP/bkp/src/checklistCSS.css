@@ -1,0 +1,1032 @@
+.oforms_calendar_header
+{
+    /* IE10 */ 
+    background-image: -ms-linear-gradient(top, #FFBF0F 0%, #EF9013 100%);
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(top, #FFBF0F 0%, #EF9013 100%);
+    /* Opera */ 
+    background-image: -o-linear-gradient(top, #FFBF0F 0%, #EF9013 100%);
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFBF0F), color-stop(1, #EF9013));
+    height: 30px;
+}
+
+.oforms_calendar_footer
+{
+    /* IE10 */ 
+    background-image: -ms-linear-gradient(top, #FFBF0F 0%, #EF9013 100%);
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(top, #FFBF0F 0%, #EF9013 100%);
+    /* Opera */ 
+    background-image: -o-linear-gradient(top, #FFBF0F 0%, #EF9013 100%);
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFBF0F), color-stop(1, #EF9013));
+    height: 30px;
+}
+
+.oforms_calendar_body
+{    
+    background-color:whitesmoke;
+    width: 230px;
+    height: 200px;
+}
+
+.oforms_daysOfWeek
+{
+    text-align: right;
+    padding:2px;
+    width: 14%;
+    max-width: 24px;
+    color: white;
+    font-family: Verdana;
+    font-size: small;
+}
+
+.oforms_daysOfMonth
+{
+    text-align: right;
+    color: black;
+    width: 14%;
+    max-width: 22px;
+    font-family: Verdana;
+    font-size: small;
+}
+
+.oforms_table_week
+{
+    background-color: #e5e5e5;
+    width: 100%;
+}
+
+.oforms_table_weekdays{
+    background-color: grey;
+    width: 100%
+}
+
+.oforms_width14
+{
+    width: 14%;
+}
+
+.oforms_comboButton
+{
+    width: 20px;
+    float: right;
+    padding: 0px;
+    background: none;
+    border: none;
+}
+
+.oforms_dpkrInputField
+{    
+    padding: 0px;
+    border: none;
+}
+
+.oforms_dpkrTable
+{
+    margin: 0px;
+    border-collapse:collapse;
+    padding:0px;
+    border: none;
+    border-spacing: 0;
+}
+
+.uiCls
+{
+    border: 1px solid #7F9DB9;
+}
+
+.oforms_headerpan
+{
+    /*    BACKGROUND-COLOR: rgb(234,242,255);*/
+    BACKGROUND-COLOR: #EEEEEE;        
+    height: 20px;
+}
+
+.oforms_headercol
+{    
+    background: #ebeadb;
+    BORDER-BOTTOM: #cbc7b8 2px solid;
+    BORDER-RIGHT: #aca899 1PX SOLID;
+}
+
+.oforms_lvwheadercol
+{    
+    background: #ebeadb;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    padding-right: 5px;
+    padding-left: 5px;
+    BORDER-BOTTOM: #cbc7b8 2px solid;
+    BORDER-RIGHT: #aca899 1PX SOLID;
+}
+.oforms_tabFrame
+{    
+    BACKGROUND-COLOR: white; 
+/*    height: 100%; Bugzilla ��������� Bug 47524*/
+    BORDER: 0px;				
+    BORDER-BOTTOM: #7F9DB9 1PX SOLID;
+    BORDER-LEFT: #7F9DB9 1PX SOLID;
+    BORDER-RIGHT: #7F9DB9 1PX SOLID;   
+}
+
+
+.oforms_tabFrameLeft
+{    
+    BACKGROUND-COLOR: white; 
+    height: 100%;
+    BORDER: 0px;				
+    BORDER-BOTTOM: #7F9DB9 1PX SOLID;
+    BORDER-LEFT: #7F9DB9 1PX SOLID;
+    BORDER-RIGHT: #7F9DB9 1PX SOLID;
+    BORDER-TOP: #7F9DB9 1PX SOLID;   
+}
+.oforms_tabFrameBottom
+{    
+    BACKGROUND-COLOR: white; 
+    height: 100%;
+    BORDER: 0px;				
+    BORDER-TOP: #7F9DB9 1PX SOLID;
+    BORDER-LEFT: #7F9DB9 1PX SOLID;
+    BORDER-RIGHT: #7F9DB9 1PX SOLID;   
+}
+.oforms_tabFrameRight
+{    
+    BACKGROUND-COLOR: white; 
+    height: 100%;
+    BORDER: 0px;				
+    BORDER-BOTTOM: #7F9DB9 1PX SOLID;
+    BORDER-TOP: #7F9DB9 1PX SOLID;
+    BORDER-RIGHT: #7F9DB9 1PX SOLID;   
+    BORDER-LEFT: #7F9DB9 1PX SOLID;   
+}
+
+.oforms_tabPanel
+{
+    /*    BORDER-BOTTOM: rgb(120,172,255) 1PX SOLID;*/
+
+    BORDER-BOTTOM: #7F9DB9 1PX SOLID;
+}
+
+.oforms_tabOff
+{    
+    TEXT-ALIGN: CENTER;
+    COLOR: black;
+    BACKGROUND-COLOR: rgb(234,242,255);    
+    BORDER: #7F9DB9 1PX SOLID;        
+    HEIGHT: 21px;			
+    CURSOR: HAND;     
+    margin-right: 1px;
+    line-height: 1.9;
+    margin-left: 1px;
+}
+
+
+.oforms_tabOffBottom
+{    
+    TEXT-ALIGN: CENTER;
+    COLOR: #f8f8ff;
+    BACKGROUND-COLOR: rgb(234,242,255);    
+    BORDER: #7F9DB9 1PX SOLID;        
+    HEIGHT: 17px;			
+    CURSOR: HAND;     
+}
+
+
+.oforms_tabOffLeft
+{    
+    TEXT-ALIGN: CENTER;
+    COLOR: #f8f8ff;
+    BACKGROUND-COLOR: rgb(234,242,255);    
+    BORDER: #7F9DB9 1PX SOLID;        
+    WIDTH: 17px;			
+    CURSOR: HAND;     
+    -moz-transform:rotate(90deg); 
+    -webkit-transform:rotate(90deg); 
+    -o-transform:rotate(90deg); 
+     -ms-transform: rotate(90deg); 
+     -ms-transform-origin:0% 0%;
+    -webkit-transform-origin:0% 0%; 
+    -moz-transform-origin:0% 0%;
+    -o-transform-origin:0% 0%;
+     filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1); 
+}
+
+
+.oforms_tabOffRight
+{    
+    TEXT-ALIGN: CENTER;
+    COLOR: #f8f8ff;
+    BACKGROUND-COLOR: rgb(234,242,255);    
+    BORDER: #7F9DB9 1PX SOLID;        
+    WIDTH: 17px;			
+    CURSOR: HAND;     
+    -moz-transform:rotate(90deg); 
+    -webkit-transform:rotate(90deg); 
+    -o-transform:rotate(90deg); 
+    -ms-transform: rotate(90deg); 
+    -ms-transform-origin:0% 0%;
+    -webkit-transform-origin:0% 0%; 
+    -moz-transform-origin:0% 0%;
+    -o-transform-origin:0% 0%;
+     filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1); 
+}
+
+.oforms_tabOver
+{    
+    TEXT-ALIGN: CENTER;
+    COLOR: #f8f8ff;
+    BACKGROUND-COLOR: rgb(234,242,255);    
+    BORDER: #7F9DB9 1PX SOLID;        
+    HEIGHT: 17px;			
+    CURSOR: HAND;     
+}
+
+.oforms_tabOn
+{    
+    TEXT-ALIGN: CENTER;    
+    BACKGROUND-COLOR: white;	
+    BORDER-LEFT: #7F9DB9 1PX SOLID;
+    BORDER-RIGHT: #7F9DB9 1PX SOLID;
+    BORDER-TOP:#7F9DB9 1PX SOLID;
+    HEIGHT: 22px;	
+    CURSOR: HAND;
+    line-height: 1.9;
+    margin-right: 1px;     
+    margin-left: 1px;
+}
+
+.oforms_tabOnBottom
+{    
+    TEXT-ALIGN: CENTER;    
+    BACKGROUND-COLOR: white;	
+    BORDER-LEFT: #7F9DB9 1PX SOLID;
+    BORDER-RIGHT: #7F9DB9 1PX SOLID;
+    BORDER-BOTTOM:#7F9DB9 1PX SOLID;
+    HEIGHT: 18px;	
+    CURSOR: HAND;
+}
+
+.oforms_tabOnLeft
+{    
+    TEXT-ALIGN: CENTER;    
+    BACKGROUND-COLOR: white;	
+    BORDER-LEFT: #7F9DB9 1PX SOLID;
+    BORDER-RIGHT: #7F9DB9 1PX SOLID;
+    BORDER-BOTTOM:#7F9DB9 1PX SOLID;
+    WIDTH:20px;
+    CURSOR: HAND;
+    -moz-transform:rotate(90deg); 
+    -webkit-transform:rotate(90deg); 
+    -o-transform:rotate(90deg); 
+     filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1); 
+    -ms-transform: rotate(90deg); 
+    -ms-transform-origin:0% 0%;
+    -webkit-transform-origin:0% 0%; 
+    -moz-transform-origin:0% 0%;
+    -o-transform-origin:0% 0%;     
+}
+
+.oforms_tabOnRight
+{    
+    TEXT-ALIGN: CENTER;    
+    BACKGROUND-COLOR: white;	
+    BORDER-LEFT: #7F9DB9 1PX SOLID;
+    BORDER-RIGHT: #7F9DB9 1PX SOLID;
+    BORDER-TOP:#7F9DB9 1PX SOLID;
+    CURSOR: HAND;
+    WIDTH:20px;
+    -moz-transform:rotate(90deg); 
+    -webkit-transform:rotate(90deg); 
+    -o-transform:rotate(90deg); 
+    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    -ms-transform: rotate(90deg); 
+    -ms-transform-origin:0% 0%;
+    -webkit-transform-origin:0% 0%; 
+    -moz-transform-origin:0% 0%;
+    -o-transform-origin:0% 0%;
+    
+}
+#mytab td{ height: 14px;
+	width:10px;
+}
+.oforms_tabRow
+{
+    position: relative;
+    width:100%;
+    Height:21px;
+    BACKGROUND-COLOR:rgb(234,242,255);
+    BORDER-BOTTOM: #7F9DB9 1PX SOLID;    
+}
+
+.ui-datepicker-trigger
+{
+    width:15px;
+    float: right;
+}
+.oforms_errorOuterDiv
+{
+    position: absolute;
+    top:50px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    background: #FEEFB3;    
+    color: #9F6000;
+    border: #9F6000 1px solid;
+    max-width:250px;
+    display:block;
+    z-index: 9999;
+}
+
+.oforms_errorInnerDiv_border
+{
+    position:absolute;
+    border-bottom: #9F6000 10px solid;
+    border-left: transparent 10px solid;
+    border-right: transparent 10px solid;
+    border-top: transparent 10px solid;
+    top:-20px;
+    left: 10px;
+    height:0px;
+}
+
+.oforms_errorInnerDiv
+{
+    position:absolute;
+    border-bottom: #FEEFB3 10px solid;
+    border-left: transparent 10px solid;
+    border-right: transparent 10px solid;
+    border-top: transparent 10px solid;
+    top:-18px;
+    left: 10px;
+    height:0px;
+}
+
+.oforms_errorImage
+{
+    top:2px;
+    width:16px;
+    height:16px;
+    display: inline-block;         
+    background-repeat: no-repeat;
+    background-image: url(/webdesktop/javax.faces.resource/images/msg.png.jsf);
+}
+.oforms_errorLabel
+{    
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size: 12px;
+    padding-left: 5px;     
+    position: relative;
+}
+.oforms_Rowcol
+{    
+    background-color:#EEEEEE ;
+    border-width: 1px;
+    padding: 8px;
+    border-bottom: #FEEFB3 1px solid; /*Bugzilla ��������� Bug 50981*/
+    border-left: transparent 1px solid;
+    border-right: transparent 1px solid;
+    border-top: transparent 1px solid;
+    border-color: black;
+    text-align: center;
+    vertical-align: middle;
+    direction: inherit;
+}
+.oforms_Rowcol_SELECTED
+{    
+    background-color:lightskyblue ;
+    padding: 2px;
+    border-width: 1px;
+    border-bottom: #FEEFB3 1px solid;
+    border-left: transparent 1px solid;
+    border-right: transparent 1px solid;
+    border-top: transparent 1px solid;
+    border-color: black;
+    vertical-align: middle;
+    direction: inherit;
+}
+
+.arrowdowntheme {
+    BORDER-TOP: #7F9DB9 7px solid;
+    BORDER-BOTTOM: transparent 0px dashed;
+    BORDER-LEFT: transparent 5px dashed;
+    BORDER-RIGHT: transparent 5px dashed;
+    TOP: 0px;
+    LEFT: 0px;
+    WIDTH: 0px;
+    HEIGHT: 0px;
+    LINE-HEIGHT: 0;
+    FONT-SIZE: 0px;
+    PADDING-RIGHT: 1px;
+}
+ 
+
+.oforms_ngform
+{
+    
+}
+
+.oforms_hidden
+{
+    visibility: hidden;
+}
+
+.oforms_cell_border
+{
+    border:1px solid #7F9DB9;
+}
+
+.oforms_hyperlink
+{
+    text-decoration:underline !important;
+    color:#0000ff !important;
+}
+
+.arrowlefttheme {
+    POSITION: relative;
+    BORDER-TOP: transparent 6px dashed;
+    BORDER-BOTTOM: transparent 6px dashed;
+    BORDER-LEFT: transparent 0px dashed;
+    BORDER-RIGHT: black 6px solid;
+    TOP: 0px;
+    LEFT: 0px;
+    WIDTH: 0px;
+    HEIGHT: 0px;
+    LINE-HEIGHT: 0;
+    DISPLAY: inline-block;
+    FONT-SIZE: 0px;
+    PADDING-RIGHT: 4px;
+}
+
+.arrowrighttheme {
+    POSITION: relative;
+    BORDER-TOP: transparent 6px dashed;
+    BORDER-BOTTOM: transparent 6px dashed;
+    BORDER-LEFT: black 6px solid;
+    BORDER-RIGHT: transparent 0px dashed;
+    TOP: 0px;
+    LEFT: 0px;
+    WIDTH: 0px;
+    HEIGHT: 0px;
+    LINE-HEIGHT: 0;
+    DISPLAY: inline-block;
+    FONT-SIZE: 0px;
+    PADDING-LEFT: 4px;
+}
+
+.arrowleftdistheme {
+    POSITION: relative;
+    BORDER-TOP: transparent 6px dashed;
+    BORDER-BOTTOM: transparent 6px dashed;
+    BORDER-LEFT: transparent 0px dashed;
+    BORDER-RIGHT: #C0C0C0 6px solid;
+    TOP: 0px;
+    LEFT: 0px;
+    WIDTH: 0px;
+    HEIGHT: 0px;
+    LINE-HEIGHT: 0;
+    DISPLAY: inline-block;
+    FONT-SIZE: 0px;
+    PADDING-RIGHT: 4px;
+}
+
+.arrowrightdistheme {
+    POSITION: relative;
+    BORDER-TOP: transparent 6px dashed;
+    BORDER-BOTTOM: transparent 6px dashed;
+    BORDER-LEFT: #C0C0C0 6px solid;
+    BORDER-RIGHT: transparent 0px dashed;
+    TOP: 0px;
+    LEFT: 0px;
+    WIDTH: 0px;
+    HEIGHT: 0px;
+    LINE-HEIGHT: 0;
+    DISPLAY: inline-block;
+    FONT-SIZE: 0px;
+    PADDING-LEFT: 4px;
+}
+
+/*Bugzilla ��������� Bug 57702*/
+input, select , button ,textarea
+{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+	height: 27px !important;
+	padding: 5px 5px;
+	FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+	FONT-WEIGHT: normal !important;
+    font-size: 8pt !important;
+    box-shadow: inset 0 1px 3px #d5eaf9 !important;
+    border: 1px solid #1d4a71 !important;
+    border-radius: 4px !important;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+}
+ 
+.oforms_dialog
+{
+    font-family: Verdana !important;
+    font-size: 11px !important;
+    padding:  0px !important;
+    border: 1px solid #6D6D6D !important;
+}
+
+textarea {
+    resize:none;
+}
+ 
+.mandatoryLabel:after{
+    content: " *" !important;
+    color: #E32 !important;
+}
+
+.curved_border
+{   
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.activeRepeater
+{
+     border: 2px solid #00B2EE !important;
+}
+.oforms_RepRowcol_SELECTED
+{
+     border: 2px solid #00B2EE !important;
+}
+/* custom css for mcb */
+/*legend{
+    font-size: 14px !important;
+    color: #1d4a71 !important;
+}
+
+.oforms_ngform{
+    background-color: #fff !important;
+}
+
+fieldset{
+    border: 1px solid #1d4a71 !important;
+}
+.oforms_tabFrame{
+    border: 1px solid #1d4a71 !important;
+}*/
+/*.oforms_tabRow {
+    BACKGROUND-COLOR: #fff !important;
+}
+div[type='ListView']{
+    border: 1px solid #1d4a71 !important;
+}*/
+.oforms_tabOn{
+    margin-right: 2px !important;
+    height: 25px !important;
+    border: 1px solid #ed1c24 !important;
+    background-color: #f99315 !important;
+    color:#fff !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+	border-radius: 8px 8px 0px 0px !important;
+	FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+	FONT-WEIGHT: 600 !important;
+	font-size: 10pt !important;
+	font:normal !important;
+	outline: none !important;
+margin: 2px !important;
+}
+.oforms_tabOff {
+    margin-right: 2px !important;
+    height: 25px !important;
+    border: 1px solid #1d4a71 !important;
+    background-color: #ed1c24 !important;
+    text-decoration: none !important;
+	 border-radius: 8px 8px 0px 0px !important;
+	FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+	FONT-WEIGHT: 600 !important;
+	font-size: 10pt !important;
+	font:normal !important;
+	outline: none !important;
+margin: 2px !important;
+}
+
+/*#ngform button,.ui-dialog-buttonpane button{
+    color: #fff !important; 
+    background-color: #ed1c24 !important;
+    border-color: #2e6da4 !important;
+    margin-bottom: 0 !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    line-height: 1.42857143 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+    vertical-align: middle !important;
+    -ms-touch-action: manipulation !important;
+    touch-action: manipulation !important;
+    cursor: pointer !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    background-image: none !important;
+    border: 1px solid #fff !important;
+    border-radius: 4px !important;
+}*/
+.oforms_lvwheadercol{
+    background-color:rgb(51, 122, 183) !important;
+    color: #fff !important;
+    FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+	FONT-WEIGHT: normal !important;
+	font-size: 9pt !important;
+	font:normal !important;
+    height: 10px !important;
+    text-align: center !important;
+    
+
+}
+.oforms_lvwheadercol a{
+    float: left !important;
+}
+div[type='ListView'] table tr:nth-child(odd){
+    background-color: #d5eaf9 !important;
+}
+div[type='ListView'] table tr:nth-child(even){
+    background-color: #d5eaf9 !important;
+}
+div[type='ListView'] table tr:hover{
+    background-color: lightblue !important;
+}
+.oforms_Rowcol td{
+    text-align: left !important;
+    padding-left: 10px !important;
+}
+
+.oforms_Rowcol_SELECTED td{
+    text-align: left !important;
+    padding-left: 10px !important;
+    background-color: #ffe4b2 !important;
+}
+#ngform input[type='text']{
+    padding: 5px 5px;
+    box-shadow: inset 0 1px 3px #d5eaf9 !important;
+    border: 1px solid #1d4a71 !important;
+    border-radius: 4px !important;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    height: 25px !important;
+FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+FONT-WEIGHT: normal !important;
+font-size: 9pt !important;
+font:normal !important;
+height: 24px !important;
+}
+
+#ngform  select{
+    padding: 5px 5px;
+    box-shadow: inset 0 1px 3px #d5eaf9 !important;
+    border: 1px solid #1d4a71 !important;
+    border-radius: 4px !important;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+    height: 25px !important;
+FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+FONT-WEIGHT: normal !important;
+font-size: 9pt !important;
+font:normal !important;
+height: 24px !important;
+}
+
+#ngform  textarea{
+    padding: 5px 5px;
+    box-shadow: inset 0 1px 3px #d5eaf9 !important;
+    border: 1px solid #1d4a71 !important;
+    border-radius: 4px !important;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+	FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+	FONT-WEIGHT: normal !important;
+	font-size: 9pt !important;
+	font:normal !important;
+	height: 24px !important;
+}
+div#Tab1_tab_L{
+    display:none !important;
+}
+div#Tab1_tab_R{
+    display:none !important;
+}
+label{
+FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+FONT-WEIGHT: 600 !important;
+font-size: 9pt !important;
+font:normal !important;
+margin-top: 2px !important;
+}
+fieldset {
+outline: none;background: rgb(250,250,250) !important;}
+
+div[type="Panel"] {
+border: 1px solid orange !important;
+outline: none;
+background: rgb(250,250,250) !important;
+}
+fieldset#Frame2 {
+background: rgba(240, 240, 240, 0) !important;
+}
+fieldset#Frame10 {
+background: rgb(240, 240, 240) !important;
+
+} 
+/*fieldset#Frame2 {
+background: rgb(255,255,255) !important;
+}*/
+[class*="Header_CSS"] label {
+    font-weight: 600 !important;
+}
+th.oforms_lvwheadercol label {
+    FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+    FONT-WEIGHT: 500 !important;
+    font-size: 9pt !important;
+    font:normal !important;
+     background-color:rgb(51, 122, 183) !important;
+
+}
+
+button[class*="Add"]{
+      border-radius: 4px !important;
+      width:70px !important;
+  background: url(/webdesktop/resources/images/closadd2.png) 5px 50% no-repeat scroll rgb(51, 122, 183) !important;
+}
+button[class*="Mod"]{
+      border-radius: 4px !important;
+      width:70px !important;
+  background: url(/webdesktop/resources/images/closmodify.png) 5px 50% no-repeat scroll rgb(51, 122, 183) !important;
+}
+button[class*="Del"]{
+      border-radius: 4px !important;
+      width:70px !important;
+  background: url(/webdesktop/resources/images/closdelete.png) 5px 50% no-repeat scroll rgb(51, 122, 183) !important;
+}
+
+th.oforms_headercol
+{  
+    background-color: #f99315 !important;
+    color: white !important;
+        FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+        FONT-WEIGHT: 600 !important;
+        font-size: 9pt !important;
+        font:normal !important;
+         height: 10px !important;
+        text-align: center !important;
+
+}
+div#feesDetails_Frame2_Header{
+   background-color: white !important; 
+}
+
+button{
+
+   border-radius: 4px !important; 
+}
+label#formLabel {
+  font-size: 0px !important;
+}
+
+button#Button1 {
+	height:60px !important;   
+   border-radius: 4px !important;
+  background: url(/webdesktop/resources/images/Fees.jpg) 0px 50% no-repeat scroll rgb(51, 122, 183) !important;
+}
+button#PaymentColltec_Button2 {
+	height:60px !important;  
+    border-radius: 4px !important;
+  background: url(/webdesktop/resources/images/payment.jpg) 0px 50% no-repeat scroll rgb(51, 122, 183) !important;
+}
+button#Button4 {
+	height:60px !important;  
+    border-radius: 4px !important;
+  background: url(/webdesktop/resources/images/Summary.jpg) 0px 50% no-repeat scroll rgb(51, 122, 183) !important;
+}
+fieldset#Frame11 {
+  border: 2px solid orange !important;
+}
+fieldset#Frame3 {
+  border: 2px solid orange !important;
+}
+fieldset#Frame5 {
+border: 2px solid orange !important;
+}
+
+iframe#LoanStructureRTFLI_Frag_IFrame1 {
+border:none !important;
+}
+iframe#LoanPurposeRTFLI_Frag_IFrame1 {
+border:none !important;
+}
+
+iframe#CreditRiskSumm_Frag_IFrame1 {
+border:none !important;
+}
+
+iframe#BwrOrCompBG_Frag_IFrame1 {
+border:none !important;
+}
+
+iframe#FinancialAnalysis_FinAnalysis_Iframe {
+border:none !important;
+}
+
+iframe#GuarantorAnlys_Frag_IFrame1 {
+border:none !important;
+}
+
+iframe#RepaymentAnlys_Frag_IFrame1 {
+border:none !important;
+}
+iframe#RiskRatingAnlys_Frag_IFrame1 {
+border:none !important;
+}
+iframe#RiskAssmtAnlys_Frag_IFrame1 {
+border:none !important;
+}
+iframe#ConclAndRec_Frag_IFrame1 {
+border:none !important;
+}
+.oforms_tabFrame
+{ 
+	BACKGROUND-COLOR: :#FfFaFa !important; 
+}
+.oforms_tabRow{
+Height:0px  !important;
+}
+fieldset#feesDetails_Frame3 {
+  background-color: #ed1c24 !important;
+}
+
+table#feesDetails_Frame2_Header_Table{
+  margin-left: 18px !important;
+  width: 850px !important;
+}
+img#feesDetails_Frame2_addRow {
+  width: 20px !important;
+  margin-right: 852px !important;
+}
+
+
+input[type='text']#ThirdPartySupervisorFrag_Comments {
+    height: 70px !important;
+}
+input[type='text']#ThirdPartyOfficerFrag_Comments {
+    height: 70px !important;
+}
+input[type='text']#Convenants_Frag_Comments {
+    height: 70px !important;
+}
+input[type='text']#PolicyException_Frag_Desc {
+    height: 90px !important;
+}
+input[type='text']#PolicyException_Frag_DetMigFac {
+    height: 90px !important;
+}
+
+input[type='text']#Decision_Frag_Comments {
+    height: 65px !important;
+}
+
+input[type='text']#CT_CLOS_ClosingAndDisbLoanDisb_DisbursementMessage {
+    height: 70px !important;
+}
+
+input[type='text']#CT_CLOS_FinAnalysisLoanStructure_LineUtilization {
+    height: 100px !important;
+}
+input[type='text']#CT_CLOS_FinAnalysisLoanStructure_IncrementalFacility {
+    height: 100px !important;
+}
+
+input[type='text']#CT_CLOS_FinAnalysisLoanStructure_Purpose {
+    height: 100px !important;
+}
+
+input[type='text']#CT_CLOS_FinAnalysisLoanStructure_Maturity {
+    height: 100px !important;
+}
+
+input[type='text']#CT_CLOS_FinAnalysisLoanStructure_Pricing {
+    height: 100px !important;
+}
+
+input[type='text']#CT_CLOS_FinAnalysisLoanStructure_Ammortization {
+    height: 100px !important;
+}
+
+input[type='text']#CT_CLOS_FinAnalysisLoanStructure_Collateral {
+    height: 100px !important;
+}
+
+input[type='text']#CT_CLOS_FinAnalysisLoanStructure_Covenants {
+    height: 100px !important;
+}
+
+input[type='text']#CT_CLOS_FinAnalysisLoanStructure_OtherConditions {
+    height: 100px !important;
+}
+input[type='text']#CT_CLOS_FinAnalysisLoanStructure_PolicyExceptions {
+    height: 100px !important;
+}
+input[type='text']#CT_CLOS_FinAnalysisLoanStructure_MarketLiquidity {
+    height: 100px !important;
+}
+
+input[type='text']#PaymentScheduleLI_Frag_Comments {
+    height: 70px !important;
+}
+input[type='text']#ActionAndFollowUp_ActionDetails {
+    height: 80px !important;
+}
+input[type='text']#CT_SupervisorQuotes_ReviewComments {
+    height: 100px !important;
+}
+input[type='text']#CT_ThrdPartyOffQuotes_ReviewComments {
+    height: 100px !important;
+}
+
+button
+ {
+ outline-style:none !important;
+ cursor: pointer !important;
+ -webkit-box-shadow: 0 1px 0 0 rgb(119,119,119) , 0 2px 0 0 rgb(119,119,119) , 0 2px 0 0 rgb(119,119,119) , 0 4px 0 0 rgb(119,119,119) , 0 0px 0 0 rgb(119,119,119) , 0 6px 0 0 rgb(119,119,119) , 0 0 5px 0 rgba(0,0,0,0.0980392) , 0 1px 3px 0 rgba(0,0,0,0.298039) , 0 3px 5px 0 rgba(0,0,0,0.2) , 0 5px 10px 0 rgba(0,0,0,0.247059) !important;
+  box-shadow: 0 0px 0 0 rgb(119,119,119) , 0 1px 0 0 rgb(119,119,119) , 0 2px 0 0 rgb(119,119,119) , 0 2px 0 0 rgb(119,119,119) , 0 0px 0 0 rgb(119,119,119) , 0 2px 0 0 rgb(119,119,119) , 0 0 5px 0 rgba(0,0,0,0.0980392) , 0 1px 3px 0 rgba(0,0,0,0.298039) , 0 3px 5px 0 rgba(0,0,0,0.2) , 0 5px 10px 0 rgba(0,0,0,0.247059)  !important ;
+  background: #ed1c24 !important;
+ FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+FONT-WEIGHT: 600 !important;
+font-size: 9pt !important;
+font:normal !important;
+margin-top: 0px !important;
+color: rgb(255, 255, 255) !important;
+ }
+button:active {
+  margin: 4px 0 0 !important;
+ background:rgba(0, 82, 155, 1) !important;
+  }
+  
+ div[class*="Header_CSS"]{
+      background: linear-gradient(to right, rgba(0, 82, 155, 1) 0%, rgba(113, 206, 239, 1) 48%, rgba(0, 82, 155, 1) 100%) !important;
+  }
+
+label#Label4 {
+    color: rgb(51, 122, 188) !important;
+    FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+    FONT-WEIGHT: 600 !important;
+    font-size: 8pt !important;
+    font:normal !important;
+    margin-left:10px !important;
+    
+}
+label#Label7 {
+    color: rgb(51, 122, 188) !important;
+    FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+    FONT-WEIGHT: 600 !important;
+    font-size: 8pt !important;
+    font:normal !important;
+    margin-left:5px !important;
+}
+
+th{
+  
+    background-color: #0c658e !important;
+	color: #f8f8ff !important;
+    FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+    FONT-WEIGHT: 600 !important;
+    font-size: 9pt !important;
+    font: normal !important;
+    height: 28px !important;
+    text-align: center !important;
+	background: #ebeadb;
+    BORDER-BOTTOM: #cbc7b8 2px solid;
+    BORDER-RIGHT: #aca899 1PX SOLID;
+}
+
+#load {
+    position:fixed;
+    width:0%;
+    height:0%;
+    margin: auto auto ;
+    top:50%;
+    left:50%;
+    text-align:center;
+	z-index:400;
+}
+	
+#layer {
+    position:fixed;
+    width: 1200px;
+	height: 800px;
+	left: 0;
+	top: 0;
+    margin: auto auto ;
+	background-color:#D3D3D3;
+	opacity: 0.5;
+	z-index:200;
+}

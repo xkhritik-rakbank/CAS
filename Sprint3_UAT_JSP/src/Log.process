@@ -1,0 +1,68 @@
+<!--------------------------------------------------------------------------------------------------------
+//           NEWGEN SOFTWARE TECHNOLOGIES LIMITED
+
+//Group						 : Application –Projects
+//Product / Project			 : RAKBank 
+//Module                     : Request-Screen Form Painitng
+//File Name					 : Log.process          
+//Author                     : Amandeep
+// Date written (DD/MM/YYYY) : 2-Feb-2015
+//Description                : Standard file to write custom logs
+//---------------------------------------------------------------------------------------------------->
+
+<%@ page import="java.text.*" %>
+<%@ page import="java.io.*" %>
+
+<%!
+public static void WriteLog(String strMsg)    
+	{
+	//commented by Deepak on 12 june to check server hang issue.
+	
+		StringBuffer strFilePath = new StringBuffer(50);
+		File dir= null;
+		FileOutputStream fos = null;
+		String sFileName = "CustomLog.Log";
+		Writer wrt = null;
+		
+		DateFormat dtFormat = new SimpleDateFormat("ddMMyyyy");
+		DateFormat dtFormat_withmillsec = new SimpleDateFormat("yyyy-MM-dd HH:mm:sss");
+		
+		String sFName = "CustomLog_RakBank"+dtFormat.format(new java.util.Date())+"_CAS.Log";
+		System.out.println(sFName);
+		try
+		{
+			strFilePath.append(System.getProperty("user.dir"));
+		
+			System.out.println(sFileName);
+			strFilePath.append(File.separatorChar);
+			strFilePath.append("CustomLog");
+			dir = new File(strFilePath.toString(), dtFormat.format(new java.util.Date()));
+			if (!dir.exists()) 
+			{
+				 dir.mkdir();				
+			}
+			strFilePath.append(File.separatorChar);
+			strFilePath.append(dtFormat.format(new java.util.Date()));
+			strFilePath.append(File.separatorChar);
+			strFilePath.append(sFName);
+			System.out.println(strFilePath.toString());
+			File curr_file = new File(strFilePath.toString());
+			if((curr_file.length()/(1024*1024))>5){
+				File old_file = new File(strFilePath.toString()+"_"+ dir.listFiles().length);
+				curr_file.renameTo(old_file);
+			}
+			java.util.Date objDate=new java.util.Date();
+			fos = new FileOutputStream(strFilePath.toString(),true);
+			wrt = new BufferedWriter(new OutputStreamWriter(fos));
+			wrt.write("[" + dtFormat_withmillsec.format(objDate) + "temp]\n" + strMsg + "\n\n" );
+			wrt.flush();
+			wrt.close();
+		}
+		catch(Exception e)
+		{
+		
+			System.out.println(e.toString());
+		}
+		
+	}
+%>

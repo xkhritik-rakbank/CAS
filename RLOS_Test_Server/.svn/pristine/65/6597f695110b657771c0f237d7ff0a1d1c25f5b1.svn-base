@@ -1,0 +1,429 @@
+//----------------------------------------------------------------------------------------------------
+//		NEWGEN SOFTWARE TECHNOLOGIES LIMITED
+//Group						: AP2
+//Product / Project			: RLOS
+//Module					: CAS
+//File Name					: Common.java
+//Author					: Deepak Kumar
+//Date written (DD/MM/YYYY)	: 06/08/2017
+//Description				: to set common utility methods used throughout the file
+//----------------------------------------------------------------------------------------------------
+
+package com.newgen.omniforms.skutil;
+
+/*------------------------------------------------------------------------------------------------------
+NEWGEN SOFTWARE TECHNOLOGIES LIMITED
+Author                         : Sanjeev Kumar (sanjeev-kumar@newgen.co.in)
+Group                          : AP-2
+Project/Product                : Generic
+Application                    : RLOS COE
+Module                         : RLOS
+File Name                      : RLOSCommon.java
+Date (DD/MM/YYYY)              : 22-Aug-2016
+Description                    : This file contains all the generic menthods which can be used in iBPS processes
+------------------------------------------------------------------------------------------------------*/
+
+
+import java.awt.Color;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.List;
+import java.util.Locale;
+
+import com.newgen.omniforms.FormReference;
+import com.newgen.omniforms.context.FormContext;
+import com.newgen.omniforms.user.RLOS;
+import com.newgen.omniforms.util.CommonUtilityMethods;
+
+public class Common extends CommonUtilityMethods {
+
+   
+	private static final long serialVersionUID = 1L;
+
+public Date convertToDate(String input, Locale locale) {
+       Calendar calendar = new GregorianCalendar();
+
+       List<String> sampleFormats = new ArrayList<String>();
+       sampleFormats.add("dd MMM,yyyy");
+       sampleFormats.add("MMM dd,yyyy");
+
+       sampleFormats.add("dd MMM,yy");
+       sampleFormats.add("MMM dd,yy");
+
+       sampleFormats.add("dd-MMM-yyyy");
+       sampleFormats.add("dd-MMM-yy");
+
+       sampleFormats.add("MMM-dd-yyyy");
+       sampleFormats.add("MMM-dd-yy");
+
+       sampleFormats.add("dd-MM-yyyy");
+       sampleFormats.add("dd-MM-yy");
+
+       sampleFormats.add("dd.MM.yyyy");
+       sampleFormats.add("dd.MM.yy");
+
+       sampleFormats.add("dd.MMM.yyyy");
+       sampleFormats.add("dd.MMM.yy");
+
+       sampleFormats.add("MMM.dd.yyyy");
+       sampleFormats.add("MMM.dd.yy");
+
+       sampleFormats.add("dd/MMM/yyyy");
+       sampleFormats.add("dd/MMM/yy");
+
+       sampleFormats.add("MMM/dd/yyyy");
+       sampleFormats.add("MMM/dd/yy");
+
+       sampleFormats.add("dd/MM/yyyy");
+       sampleFormats.add("dd/MM/yy");
+
+       int flag = 0;
+       Date date = null;
+       try {
+           if (!"".equalsIgnoreCase(input))//pgarg
+           {
+               SimpleDateFormat format;//pgarg
+
+               for (String formatTypes : sampleFormats) 
+               {                   
+	               format = new SimpleDateFormat(formatTypes, locale);
+	               format.setLenient(false);
+	               date = format.parse(input);
+	               flag = 1;	               
+	               break;
+	           }
+
+               if (flag == 0) 
+               {
+                   return null;
+               }
+
+               calendar.setLenient(false);
+               calendar.setTime(date);
+           } 
+           else 
+           {              
+               return null;
+           }
+
+       } catch (Exception e1) {
+           RLOS.mLogger.info( "Exception:" + e1);
+           RLOS.logException(e1);
+       }
+       return date;
+   }
+
+   /**
+    * @Author sanjeev-kumar@newgen.co.in
+    * @Date 22-Aug-2016
+    * @Description FUNCTION FOR LOADING ALL COLLAPSIBLE FRAMES
+    */
+   public void frameCollapsibleAdjusment(String[] childFrameCollapsible, String parentFrame, String childFrameToExpand, String[] childFrameToVis, String[] frag, String[] allframes, FormReference formObject) {
+//frameCollapsibleAdjusment(childFrameLRSP, parentFrameLRSP, childFrameToExpLRSP, childFrameToVisLRSP, fragSequenceLRSP, allframesLRSP, formObject);
+      
+       int prevTop = formObject.getTop(childFrameCollapsible[0]);
+       int prevHeight = 20;
+       int flag = 0;
+      
+
+       if ("".equals(childFrameToExpand) && childFrameToVis.length == 0) 
+       {
+           for (int i = 0; i < childFrameCollapsible.length; i++) 
+           {
+               if (formObject.isVisible(childFrameCollapsible[i])) 
+               {
+      
+                   if (flag == 0) 
+                   {
+                       formObject.setTop(childFrameCollapsible[i], prevTop);
+                       
+                       flag = 1;
+
+                   } 
+                   else
+                   {
+                       formObject.setTop(childFrameCollapsible[i], prevTop + prevHeight + 2);
+                       
+                   }
+
+                   prevTop = formObject.getTop(childFrameCollapsible[i]);
+                   //prevHeight = formObject.getHeight(childFrameCollapsible[i]) + 10;
+                   
+
+               }
+           }
+
+           if (!"".equals(parentFrame)) 
+		   {               
+               formObject.setHeight(parentFrame, prevTop + prevHeight + 2);               
+           }
+
+       }
+       else if (!"".equals(childFrameToExpand) && childFrameToVis.length == 0) 
+       {           
+           for (int i = 0; i < childFrameCollapsible.length; i++) 
+           {
+               if (formObject.isVisible(childFrameCollapsible[i])) 
+               {                   
+                   if (flag == 0) 
+                   {
+                       formObject.setTop(childFrameCollapsible[i], prevTop);                       
+                       flag = 1;
+                   }
+                   else 
+                   {
+                       formObject.setTop(childFrameCollapsible[i], prevTop + prevHeight + 2);                       
+                   }
+
+                   prevTop = formObject.getTop(childFrameCollapsible[i]);
+                   if (childFrameCollapsible[i].equalsIgnoreCase(childFrameToExpand)) 
+                   {
+                       prevHeight = formObject.getHeight(childFrameCollapsible[i]);
+                   }
+                   else 
+                   {
+                       prevHeight = 20;
+                   }
+                   //prevHeight = formObject.getHeight(childFrameCollapsible[i]) + 10;                 
+               }
+           }
+
+           if (!"".equals(parentFrame)) 
+           {
+              RLOS.mLogger.info("parent frame" + parentFrame + " set to prevTop " + prevTop + " prevHeight " + prevHeight);
+               formObject.setHeight(parentFrame, prevTop + prevHeight + 2);
+              RLOS.mLogger.info("parent frame " + parentFrame + " height " + formObject.getHeight(parentFrame));
+           }
+
+       } 
+       else if ("".equals(childFrameToExpand) && childFrameToVis.length > 0) 
+       {
+          RLOS.mLogger.info("In 2 else frameCollapsibleAdjusment");
+
+           for (int i = 0; i < childFrameCollapsible.length; i++) 
+           {
+               if (formObject.isVisible(childFrameCollapsible[i])) 
+               {
+                  RLOS.mLogger.info("ChildFrame " + childFrameCollapsible[i] + " is Visible");
+                   if (flag == 0) 
+                   {
+                       formObject.setTop(childFrameCollapsible[i], prevTop);
+                       flag = 1;
+
+                   }
+                   else 
+                   {
+                       formObject.setTop(childFrameCollapsible[i], prevTop + prevHeight + 2);
+                   }
+
+                   prevTop = formObject.getTop(childFrameCollapsible[i]);
+                   //prevHeight = formObject.getHeight(childFrame[i]) + 10;
+                  RLOS.mLogger.info("ChildFrame " + childFrameCollapsible[i] + " prevTop " + prevTop + " prevHeight " + prevHeight);
+
+               } 
+               else 
+               {
+                  RLOS.mLogger.info("ChildFrame " + childFrameCollapsible[i] + " is InVisible");
+                   for (String childToVis : childFrameToVis) 
+                   {
+                       if (childFrameCollapsible[i].equalsIgnoreCase(childToVis)) 
+                       {
+                           formObject.setVisible(childToVis, true);
+                           formObject.setTop(childToVis, prevTop + prevHeight + 2);
+                           prevTop = formObject.getTop(childToVis);
+                           //prevHeight = formObject.getHeight(childToVis) + 10;
+                          RLOS.mLogger.info("ChildFrame To Visible " + childToVis + " prevTop " + prevTop + " prevHeight " + prevHeight);
+
+                       }
+                   }
+               }
+           }
+
+           if (!"".equals(parentFrame)) 
+           {
+              RLOS.mLogger.info("parent frame" + parentFrame + " set to prevTop " + prevTop + " prevHeight " + prevHeight);
+               formObject.setHeight(parentFrame, prevTop + prevHeight + 2);
+              RLOS.mLogger.info("parent frame " + parentFrame + " height " + formObject.getHeight(parentFrame));
+           }
+       }
+
+       if (allframes.length > 0 && frag.length > 0) 
+       {
+           int previousTop = formObject.getTop(allframes[0]);
+           int previousHeight = 0;
+           int j = 0;
+           flag = 0;
+           int fragHeight;
+        
+           for (int i = 0; i < (allframes.length) && j < (frag.length); i++, j++) 
+           {
+               if (formObject.isVisible(allframes[i])) 
+               {
+                   if (flag == 0) {
+                       formObject.setTop(allframes[i], previousTop);
+                       flag = 1;
+                   } else 
+                   {
+                       formObject.setTop(allframes[i], previousTop + previousHeight);
+                   }
+
+                   fragHeight = formObject.getHeight(frag[j] + "_Frame1");               
+                   fragHeight += 5;                  
+                   formObject.setHeight(allframes[i], fragHeight);
+                   previousTop = formObject.getTop(allframes[i]);
+                   previousHeight = formObject.getHeight(allframes[i]) + 2;                  
+               }
+           }
+       }
+   }
+
+   /**
+    * @Author sanjeev-kumar@newgen.co.in
+    * @Date 22-Aug-2016
+    * @Description FUNCTION FOR LOADING ALL THE CHILD FRAMES WITHIN A FRAMES
+    */
+   public void frameAdjusment(String[] childFrame, String parentFrame, String[] childFrameToVis, String[] frag, String[] allframes, FormReference formObject) {
+
+      RLOS.mLogger.info("In frameAdjusment");
+       int prevTop = formObject.getTop(childFrame[0]);
+       int prevHeight = 0;
+       //int flag = 0;
+      RLOS.mLogger.info(childFrame[0] + " prevTop " + prevTop);
+      RLOS.mLogger.info("Child Frame To Visible " + childFrameToVis.length);
+
+       if (childFrameToVis.length == 0) {
+           for (int i = 0; i < childFrame.length; i++) {
+               if (formObject.isVisible(childFrame[i])) {
+                  RLOS.mLogger.info("ChildFrame " + childFrame[i] + " is Visible");
+                   formObject.setTop(childFrame[i], prevTop + prevHeight);
+                  RLOS.mLogger.info("ChildFrame " + childFrame[i] + " moved up");
+
+                   prevTop = formObject.getTop(childFrame[i]);
+                   prevHeight = formObject.getHeight(childFrame[i]) + 2;
+                  RLOS.mLogger.info("ChildFrame " + childFrame[i] + " prevTop " + prevTop + " prevHeight " + prevHeight);
+
+               }
+           }
+
+          RLOS.mLogger.info("parentFrame " + parentFrame + " to be set prevTop " + prevTop + " prevHeight " + prevHeight);
+           formObject.setHeight(parentFrame, prevTop + prevHeight + 2);
+
+       } else {
+          RLOS.mLogger.info("In else");
+           for (int i = 0; i < childFrame.length; i++) {
+               if (formObject.isVisible(childFrame[i])) {
+                  RLOS.mLogger.info("ChildFrame " + childFrame[i] + " is Visible");
+                   formObject.setTop(childFrame[i], prevTop + prevHeight);
+
+                   prevTop = formObject.getTop(childFrame[i]);
+                   prevHeight = formObject.getHeight(childFrame[i]) + 2;
+                  RLOS.mLogger.info("ChildFrame " + childFrame[i] + " prevTop " + prevTop + " prevHeight " + prevHeight);
+
+               } else {
+                  RLOS.mLogger.info("ChildFrame " + childFrame[i] + " is InVisible");
+                   for (String childToVis : childFrameToVis) {
+                       if (childFrame[i].equalsIgnoreCase(childToVis)) {
+                           formObject.setVisible(childToVis, true);
+                           formObject.setTop(childToVis, prevTop + prevHeight);
+                           prevTop = formObject.getTop(childToVis);
+                           prevHeight = formObject.getHeight(childToVis) + 2;
+                          RLOS.mLogger.info("ChildFrame To Visible " + childToVis + " prevTop " + prevTop + " prevHeight " + prevHeight);
+
+                       } else {
+                           continue;
+                       }
+                   }
+               }
+
+           }
+          RLOS.mLogger.info("parentFrame " + parentFrame + " to be set prevTop " + prevTop + " prevHeight " + prevHeight);
+           formObject.setHeight(parentFrame, prevTop + prevHeight + 2);
+       }
+
+       if (allframes.length > 0 && frag.length > 0) {
+
+           int previousTop = formObject.getTop(allframes[0]);
+           int previousHeight = 0;
+           int j = 0;
+           //flag = 0;
+           int fragHeight;
+          RLOS.mLogger.info(allframes[0] + " " + formObject.isVisible(allframes[0]) + " previousTop " + previousTop);
+           for (int i = 0; i < (allframes.length) && j < (frag.length); i++, j++) {
+               if (formObject.isVisible(allframes[i])) {
+                   formObject.setTop(allframes[i], previousTop + previousHeight);
+
+                   fragHeight = formObject.getHeight(frag[j] + "_Frame1");
+                  RLOS.mLogger.info("fragHeight: " + fragHeight);
+                   fragHeight += 1;
+                  RLOS.mLogger.info("fragHeight: " + fragHeight);
+                   formObject.setHeight(allframes[i], fragHeight);
+
+                   previousTop = formObject.getTop(allframes[i]);
+                   previousHeight = formObject.getHeight(allframes[i]) + 2;
+                  RLOS.mLogger.info("previousTop: " + previousTop);
+                  RLOS.mLogger.info("previousHeight: " + previousHeight);
+               }
+           }
+
+       }
+
+   }
+
+   /**
+    * @Author sanjeev-kumar@newgen.co.in
+    * @Date 22-Aug-2016
+    * @param Controls
+    * @Description FUNCTION FOR DISABLING LIST OF CONTROLS
+    */
+   public void disableControls(String Controls) {
+       FormReference formObject = FormContext.getCurrentInstance().getFormReference();
+       String[] CName = Controls.split(",");
+       for (int i = 0; i < CName.length; ++i) {
+           formObject.setEnabled(CName[i], false);
+           formObject.setNGBackColor(CName[i], Color.LIGHT_GRAY);
+       }
+   }
+
+   /**
+    * @Author sanjeev-kumar@newgen.co.in
+    * @Date 22-Aug-2016
+    * @param Controls
+    * @Description FUNCTION FOR ENABLING LIST OF CONTROLS
+    */
+   public void enableControls(String Controls) {
+       FormReference formObject = FormContext.getCurrentInstance().getFormReference();
+       String[] CName = Controls.split(",");
+       for (int i = 0; i < CName.length; ++i) {
+           formObject.setEnabled(CName[i], true);
+           formObject.setNGBackColor(CName[i], Color.WHITE);
+       }
+   }
+
+   public void LoadPickList(String controlname, String query) {
+       FormReference formObject = FormContext.getCurrentInstance()
+               .getFormReference();
+      RLOS.mLogger.info("LoadPickList Query for " + controlname + ":"
+               + query);
+       // formObject.getNGDataFromDataCache(arg0, arg1);
+      // List<String> control = Arrays.asList(controlname);
+       //formObject.getDataFromDataSource(query, control);
+       formObject.getNGDataFromDataCache(query, controlname);
+   }
+   public void LoadPickListSource(String controlname, String query) {
+       FormReference formObject = FormContext.getCurrentInstance()
+               .getFormReference();
+      RLOS.mLogger.info("LoadPickList Query for " + controlname + ":"
+               + query);
+       // formObject.getNGDataFromDataCache(arg0, arg1);
+       List<String> control = Arrays.asList(controlname);
+       formObject.getDataFromDataSource(query, control);
+       //formObject.getNGDataFromDataCache(query, controlname);
+   }
+  
+   }
+
+

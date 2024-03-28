@@ -1,0 +1,8 @@
+// Deatails about build
+
+omniflow version     -omniflow 7.1
+Date of build        --12-Feb-2008
+Build Number         -21
+JDK compiler         -C:\j2sdk1.4.1_01
+compiler platefarm   -windows XP professional
+files count          -

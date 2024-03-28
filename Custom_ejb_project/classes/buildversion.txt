@@ -1,0 +1,8 @@
+// Details about build
+
+omniflow version     -omniflow 9 patch 5
+Date of build        -19-Sep-2013
+Build Number         -
+JDK compiler         -C:\Program Files\Java\jdk1.6.0_04
+compiler platefarm   -windows XP professional
+files count          -

@@ -1,0 +1,878 @@
+.oforms_calendar_header
+{
+    /* IE10 */ 
+    background-image: -ms-linear-gradient(top, #FFBF0F 0%, #EF9013 100%);
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(top, #FFBF0F 0%, #EF9013 100%);
+    /* Opera */ 
+    background-image: -o-linear-gradient(top, #FFBF0F 0%, #EF9013 100%);
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFBF0F), color-stop(1, #EF9013));
+    height: 30px;
+}
+
+.oforms_calendar_footer
+{
+    /* IE10 */ 
+    background-image: -ms-linear-gradient(top, #FFBF0F 0%, #EF9013 100%);
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(top, #FFBF0F 0%, #EF9013 100%);
+    /* Opera */ 
+    background-image: -o-linear-gradient(top, #FFBF0F 0%, #EF9013 100%);
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFBF0F), color-stop(1, #EF9013));
+    height: 30px;
+}
+
+.oforms_calendar_body
+{    
+    background-color:whitesmoke;
+    width: 230px;
+    height: 200px;
+}
+
+.oforms_daysOfWeek
+{
+    text-align: right;
+    padding:2px;
+    width: 14%;
+    max-width: 24px;
+    color: white;
+    font-family: Verdana;
+    font-size: small;
+}
+
+.oforms_daysOfMonth
+{
+    text-align: right;
+    color: black;
+    width: 14%;
+    max-width: 22px;
+    font-family: Verdana;
+    font-size: small;
+}
+
+.oforms_table_week
+{
+    background-color: #e5e5e5;
+    width: 100%;
+}
+
+.oforms_table_weekdays{
+    background-color: grey;
+    width: 100%
+}
+
+.oforms_width14
+{
+    width: 14%;
+}
+
+.oforms_comboButton
+{
+    width: 20px;
+    float: right;
+    padding: 0px;
+    background: none;
+    border: none;
+}
+
+.oforms_dpkrInputField
+{    
+    padding: 0px;
+    border: none;
+}
+
+.oforms_dpkrTable
+{
+    margin: 0px;
+    border-collapse:collapse;
+    padding:0px;
+    border: none;
+    border-spacing: 0;
+}
+
+.uiCls
+{
+    border: 1px solid #7F9DB9;
+}
+
+.oforms_headerpan
+{
+    /*    BACKGROUND-COLOR: rgb(234,242,255);*/
+    BACKGROUND-COLOR: #EEEEEE;        
+    height: 20px;
+}
+
+.oforms_lvwheadercol
+{    
+    background: #ebeadb;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    padding-right: 5px;
+    padding-left: 5px;
+    BORDER-BOTTOM: #cbc7b8 2px solid;
+    BORDER-RIGHT: #aca899 1PX SOLID;
+}
+.oforms_tabFrame
+{    
+    BACKGROUND-COLOR: #f8f8ff; 
+/*    height: 100%; Bugzilla ????????? Bug 47524*/
+    BORDER: 0px;				
+		
+}
+
+
+.oforms_tabFrameLeft
+{    
+    BACKGROUND-COLOR: #f8f8ff; 
+    height: 100%;
+    BORDER: 0px;				  
+}
+.oforms_tabFrameBottom
+{    
+    BACKGROUND-COLOR: #f8f8ff; 
+    height: 100%;
+    BORDER: 0px;				
+    BORDER-TOP: RED 1PX SOLID;
+    
+       
+}
+.oforms_tabFrameRight
+{    
+    BACKGROUND-COLOR: #f8f8ff; 
+    height: 100%;
+    BORDER: 0px;				
+    
+    BORDER-TOP: RED 1PX SOLID;
+       
+       
+}
+
+.oforms_tabPanel
+{
+    /*    BORDER-BOTTOM: rgb(120,172,255) 1PX SOLID;*/
+
+    
+}
+
+.oforms_tabOff
+{    
+    TEXT-ALIGN: CENTER;
+    COLOR: white;
+    BACKGROUND-COLOR: #0c658e;    
+    BORDER: #RED 1PX SOLID;        
+    HEIGHT: 21px;			
+    CURSOR: HAND;     
+    margin-right: 1px;
+    line-height: 1.9;
+    margin-left: 1px;
+}
+
+
+.oforms_tabOffBottom
+{    
+    TEXT-ALIGN: CENTER;
+    COLOR: black;
+    BACKGROUND-COLOR: RED;    
+    BORDER: RED 1PX SOLID;        
+    HEIGHT: 17px;			
+    CURSOR: HAND;     
+}
+
+
+.oforms_tabOffLeft
+{    
+    TEXT-ALIGN: CENTER;
+    COLOR: black;
+    BACKGROUND-COLOR: RED;    
+    BORDER: RED 1PX SOLID;        
+    WIDTH: 17px;			
+    CURSOR: HAND;     
+    -moz-transform:rotate(90deg); 
+    -webkit-transform:rotate(90deg); 
+    -o-transform:rotate(90deg); 
+     -ms-transform: rotate(90deg); 
+     -ms-transform-origin:0% 0%;
+    -webkit-transform-origin:0% 0%; 
+    -moz-transform-origin:0% 0%;
+    -o-transform-origin:0% 0%;
+     filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1); 
+}
+
+
+.oforms_tabOffRight
+{    
+    TEXT-ALIGN: CENTER;
+    COLOR: black;
+    BACKGROUND-COLOR: rgb(234,242,255);    
+    BORDER: RED 1PX SOLID;        
+    WIDTH: 17px;			
+    CURSOR: HAND;     
+    -moz-transform:rotate(90deg); 
+    -webkit-transform:rotate(90deg); 
+    -o-transform:rotate(90deg); 
+    -ms-transform: rotate(90deg); 
+    -ms-transform-origin:0% 0%;
+    -webkit-transform-origin:0% 0%; 
+    -moz-transform-origin:0% 0%;
+    -o-transform-origin:0% 0%;
+     filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1); 
+}
+
+.oforms_tabOver
+{    
+    TEXT-ALIGN: CENTER;
+    COLOR: black;
+    BACKGROUND-COLOR: rgb(234,242,255);    
+    BORDER: RED 1PX SOLID;        
+    HEIGHT: 17px;			
+    CURSOR: HAND;     
+}
+
+/*.oforms_tabOn
+{    
+    TEXT-ALIGN: CENTER;    
+    BACKGROUND-COLOR: white;	
+    BORDER-LEFT: BLACK 1PX SOLID;
+    BORDER-TOP:RED 1PX SOLID;
+    HEIGHT: 22px;	
+    CURSOR: HAND;
+    line-height: 1.9;
+    margin-right: 1px;     
+    margin-left: 1px;
+}*/
+
+.oforms_tabOnBottom
+{    
+    TEXT-ALIGN: CENTER;    
+    BACKGROUND-COLOR: white;	
+    HEIGHT: 18px;	
+    CURSOR: HAND;
+}
+
+.oforms_tabOnLeft
+{    
+    TEXT-ALIGN: CENTER;    
+    BACKGROUND-COLOR: white;	
+    
+    
+    
+    WIDTH:20px;
+    CURSOR: HAND;
+    -moz-transform:rotate(90deg); 
+    -webkit-transform:rotate(90deg); 
+    -o-transform:rotate(90deg); 
+     filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1); 
+    -ms-transform: rotate(90deg); 
+    -ms-transform-origin:0% 0%;
+    -webkit-transform-origin:0% 0%; 
+    -moz-transform-origin:0% 0%;
+    -o-transform-origin:0% 0%;     
+}
+
+.oforms_tabOnRight
+{    
+    TEXT-ALIGN: CENTER;    
+    BACKGROUND-COLOR: white;	
+    CURSOR: HAND;
+    WIDTH:20px;
+    -moz-transform:rotate(90deg); 
+    -webkit-transform:rotate(90deg); 
+    -o-transform:rotate(90deg); 
+    filter:progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+    -ms-transform: rotate(90deg); 
+    -ms-transform-origin:0% 0%;
+    -webkit-transform-origin:0% 0%; 
+    -moz-transform-origin:0% 0%;
+    -o-transform-origin:0% 0%;
+    
+}
+
+.oforms_tabRow
+{
+    position: relative;
+    width:100%;
+    Height:21px;
+    BACKGROUND-COLOR:RED;
+        
+}
+
+.ui-datepicker-trigger
+{
+    width:15px;
+    float: right;
+}
+.oforms_errorOuterDiv
+{
+    position: absolute;
+    top:50px;
+    padding-bottom: 6px;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    background: #FEEFB3;    
+    color: #9F6000;
+    border: #9F6000 1px solid;
+    max-width:250px;
+    display:block;
+    z-index: 9999;
+}
+
+.oforms_errorInnerDiv_border
+{
+    position:absolute;
+    border-bottom: #9F6000 10px solid;
+    border-left: transparent 10px solid;
+    border-right: transparent 10px solid;
+    border-top: transparent 10px solid;
+    top:-20px;
+    left: 10px;
+    height:0px;
+}
+
+.oforms_errorInnerDiv
+{
+    position:absolute;
+    border-bottom: #FEEFB3 10px solid;
+    border-left: transparent 10px solid;
+    border-right: transparent 10px solid;
+    border-top: transparent 10px solid;
+    top:-18px;
+    left: 10px;
+    height:0px;
+}
+
+.oforms_errorImage
+{
+    top:2px;
+    width:16px;
+    height:16px;
+    display: inline-block;         
+    background-repeat: no-repeat;
+    background-image: url(/webdesktop/javax.faces.resource/images/msg.png.jsf);
+}
+.oforms_errorLabel
+{    
+    font-family:Arial, Helvetica, sans-serif; 
+    font-size: 12px;
+    padding-left: 5px;     
+    position: relative;
+}
+.oforms_Rowcol
+{    
+    background-color:#EEEEEE ;
+    border-width: 1px;
+    padding: 8px;
+    border-bottom: #FEEFB3 1px solid; /*Bugzilla ????????? Bug 50981*/
+    border-left: transparent 1px solid;
+    border-right: transparent 1px solid;
+    border-top: transparent 1px solid;
+    border-color: black;
+    text-align: center;
+    vertical-align: middle;
+    direction: inherit;
+}
+.oforms_Rowcol_SELECTED
+{    
+    background-color:lightskyblue ;
+    padding: 2px;
+    border-width: 1px;
+    border-bottom: #FEEFB3 1px solid;
+    border-left: transparent 1px solid;
+    border-right: transparent 1px solid;
+    border-top: transparent 1px solid;
+    border-color: black;
+    vertical-align: middle;
+    direction: inherit;
+}
+
+.arrowdowntheme {
+    BORDER-TOP: gray 7px solid;
+    BORDER-BOTTOM: transparent 0px dashed;
+    BORDER-LEFT: transparent 5px dashed;
+    BORDER-RIGHT: transparent 5px dashed;
+    TOP: 0px;
+    LEFT: 0px;
+    WIDTH: 0px;
+    HEIGHT: 0px;
+    LINE-HEIGHT: 0;
+    FONT-SIZE: 0px;
+    PADDING-RIGHT: 1px;
+}
+ 
+
+.oforms_ngform
+{
+    
+}
+
+.oforms_hidden
+{
+    visibility: hidden;
+}
+
+.oforms_cell_border
+{
+    border:1px solid #7F9DB9;
+}
+
+.oforms_hyperlink
+{
+    text-decoration:underline !important;
+    color:#0000ff !important;
+}
+
+.arrowlefttheme {
+    POSITION: relative;
+    BORDER-TOP: transparent 6px dashed;
+    BORDER-BOTTOM: transparent 6px dashed;
+    BORDER-LEFT: transparent 0px dashed;
+    BORDER-RIGHT: black 6px solid;
+    TOP: 0px;
+    LEFT: 0px;
+    WIDTH: 0px;
+    HEIGHT: 0px;
+    LINE-HEIGHT: 0;
+    DISPLAY: inline-block;
+    FONT-SIZE: 0px;
+    PADDING-RIGHT: 4px;
+}
+
+.arrowrighttheme {
+    POSITION: relative;
+    BORDER-TOP: transparent 6px dashed;
+    BORDER-BOTTOM: transparent 6px dashed;
+    BORDER-LEFT: black 6px solid;
+    BORDER-RIGHT: transparent 0px dashed;
+    TOP: 0px;
+    LEFT: 0px;
+    WIDTH: 0px;
+    HEIGHT: 0px;
+    LINE-HEIGHT: 0;
+    DISPLAY: inline-block;
+    FONT-SIZE: 0px;
+    PADDING-LEFT: 4px;
+}
+
+.arrowleftdistheme {
+    POSITION: relative;
+    BORDER-TOP: transparent 6px dashed;
+    BORDER-BOTTOM: transparent 6px dashed;
+    BORDER-LEFT: transparent 0px dashed;
+    BORDER-RIGHT: #C0C0C0 6px solid;
+    TOP: 0px;
+    LEFT: 0px;
+    WIDTH: 0px;
+    HEIGHT: 0px;
+    LINE-HEIGHT: 0;
+    DISPLAY: inline-block;
+    FONT-SIZE: 0px;
+    PADDING-RIGHT: 4px;
+}
+
+.arrowrightdistheme {
+    POSITION: relative;
+    BORDER-TOP: transparent 6px dashed;
+    BORDER-BOTTOM: transparent 6px dashed;
+    BORDER-LEFT: #C0C0C0 6px solid;
+    BORDER-RIGHT: transparent 0px dashed;
+    TOP: 0px;
+    LEFT: 0px;
+    WIDTH: 0px;
+    HEIGHT: 0px;
+    LINE-HEIGHT: 0;
+    DISPLAY: inline-block;
+    FONT-SIZE: 0px;
+    PADDING-LEFT: 4px;
+}
+
+/*Bugzilla ????????? Bug 57702*/
+input, select , button ,textarea
+{
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.oforms_dialog
+{
+    font-family: Verdana !important;
+    font-size: 11px !important;
+    padding:  0px !important;
+    border: 1px solid #6D6D6D !important;
+}
+
+textarea {
+    resize:none;
+}
+ 
+.mandatoryLabel:after{
+    content: " *" !important;
+    color: #E32 !important;
+}
+
+.curved_border
+{   
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+.activeRepeater
+{
+     border: 2px solid #00B2EE !important;
+}
+.oforms_RepRowcol_SELECTED
+{
+     border: 2px solid #00B2EE !important;
+}
+/*************************************************************
+********sanjeev-kumar added for RLOS custom start*************
+***************************************************************/
+.oforms_tabFrame {
+    background: #f8f8ff !important;
+}
+.oforms_tabOn{
+	/*background: url('/webdesktop/resources/images/SKtabEditing.png') no-repeat 1px 1px #FFF;
+	padding-left: 25px !important;*/
+    margin-right: 2px !important;
+    height: 25px !important;
+    color:#white !important;
+	/*border: 2px solid #97e1f7 !important;*/
+	background-color:  #0d0250 !important;
+    font-weight: bold !important;
+    text-decoration: none !important;
+	border-radius: 5px 5px 0px 0px !important;
+	FONT-FAMILY: Verdana, Geneva, sans-serif !important;
+	FONT-WEIGHT: 600 !important;
+	font-size: 9pt !important;
+	font:normal !important;
+	outline: none !important;
+margin: 2px !important;
+}
+.oforms_tabOff {
+    margin-right: 2px !important;
+    height: 25px !important;
+    border: 1px solid #1d4a71 !important;
+    background-color: #0c658e !important;
+    text-decoration: none !important;
+	border-radius: 5px 5px 0px 0px !important;
+	FONT-FAMILY: Verdana, Geneva, sans-serif !important;
+	FONT-WEIGHT: 600 !important;
+	font-size: 9pt !important;
+	font:normal !important;
+	outline: none !important;
+margin: 2px !important;
+}
+
+.oforms_tabOff {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  /*Change done by deepak to remove the animation of hidden of cursore hover 
+	backface-visibility: hidden;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-transition-duration: 0.3s;
+  */
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.oforms_tabOff:hover, .oforms_tabOff:focus, .oforms_tabOff:active {
+background-color: #0d0250 !important;
+  -webkit-transform: translateY(8px);
+  transform: translateY(8px);
+}
+.form-frame-header{
+    position: absolute;
+    line-height: 24px;
+    height: 24px;
+    color: #bfb9b9 !important;
+    background-color: #0c658e !important;
+    text-align: left;
+    top: 0px;
+    border-radius: 2px;
+    padding: 0px 8px;
+    box-sizing: border-box;
+    outline: none;
+}
+.form-frame-headerhover {
+    position: absolute;
+    line-height: 24px;
+    height: 24px;
+    color: #bfb9b9 !important;
+    background-color: #0c658e !important;
+    text-align: left;
+    top: 0px;
+    border-radius: 2px;
+    padding: 0px 8px;
+    box-sizing: border-box;
+    outline: none;
+}
+.form-frame-collapsed {
+    position: absolute;
+    line-height: 24px;
+    height: 24px;
+    color: #bfb9b9 !important;
+    background-color: #0c658e !important;
+    text-align: left;
+    top: 0px;
+    border-radius: 2px;
+    padding: 0px 8px;
+    box-sizing: border-box;
+    outline: none;
+}
+.form-frame-expanded{
+	position: absolute;
+    line-height: 24px;
+    height: 24px;
+    color: #bfb9b9 !important;
+    background-color: #00599a !important;
+    text-align: left;
+    /* border: 1px solid #d7d7d7; */
+    border-radius: 2px;
+    padding: 0px 8px;
+    box-sizing: border-box;
+    outline: none;
+}
+/*----Change By prabhakar------*/
+label {
+FONT-FAMILY: Verdana, Geneva, sans-serif !important;
+font-weight: bold !important;
+color: black !important;
+font-size: 11px !important;
+font-style: inherit !important;
+}
+/*----------------*/
+#ngform input[type='text']{
+padding: 2px 2px;
+box-shadow: inset 0 1px 3px #d5eaf9 !important;
+border: 1px solid #1d4a71 !important;
+border-radius: 5px !important;
+-webkit-box-sizing: border-box !important;
+-moz-box-sizing: border-box !important;
+FONT-FAMILY: Verdana, Geneva, sans-serif !important;
+FONT-WEIGHT: normal !important;
+font-size: 9pt !important;
+font:normal !important;
+height: 23px !important;
+padding-left: 5px;
+}
+
+
+#ngform input[disabled="disabled"] {
+    background: #D3D3D3 !important;
+    color: #000000		!important;
+}
+#ngform input[readonly="readonly"] {
+	background: #D3D3D3 !important;
+    color: #000000	 !important;
+}
+ #ngform select[locked="true"]{
+    background: #D3D3D3 !important;
+    color: #000000		!important;
+}
+
+#ngform select[disabled="disabled"] {
+    background: #D3D3D3 !important;
+    color: #000000		!important;
+}
+
+
+
+#ngform button:enabled {
+    color: #ffffff		!important;
+	background: #0c658e !important;
+	
+}
+#ngform button:disabled {
+    color: #ffffff		!important;	
+	background: #808080 !important;
+	border:1px solid #808080 !important;
+}
+
+/*changed by akshay 26/11 multiple refer reason*/
+#ngform #DecisionHistory_dec_reason_code{
+height: 50px !important;
+}
+
+
+#ngform  select{
+background-image: url('/webdesktop/resources/images/SKcomboImg.png'), -webkit-linear-gradient(#fefefe, #fefefe 40%, #fefefe);
+background-position: 97% center;
+background-repeat: no-repeat;
+padding: 2px 2px;
+box-shadow: inset 0 1px 3px #d5eaf9 !important;
+border: 1px solid #1d4a71 !important;
+border-radius: 5px !important;
+-webkit-box-sizing: border-box !important;
+-moz-box-sizing: border-box !important;
+height: 20px !important;
+FONT-FAMILY: Verdana, Geneva, sans-serif !important;
+FONT-WEIGHT: normal !important;
+font-size: 9pt !important;
+font:normal !important;
+}
+
+.oforms_lvwheadercol{
+    background-color:  #ed1c24!important;
+    color: #fff !important;
+    FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+	FONT-WEIGHT: normal !important;
+	font-size: 9pt !important;
+	font:normal !important;
+    height: 10px !important;
+    text-align: center !important;
+}
+.oforms_lvwheadercol a{
+    float: left !important;
+}
+div[type='ListView'] table tr:nth-child(odd){
+    background-color: #d5eaf9 !important;
+}
+div[type='ListView'] table tr:nth-child(even){
+    background-color: #d5eaf9 !important;
+}
+div[type='ListView'] table tr:hover{
+    background-color: lightblue !important;
+}
+
+
+.oforms_Rowcol_SELECTED td{
+    text-align: center !important;
+    background-color: #ffe4b2 !important;
+}
+#ngform  textarea{
+    padding: 5px 5px;
+    box-shadow: inset 0 1px 3px #d5eaf9 !important;
+    border: 1px solid #1d4a71 !important;
+    border-radius: 4px !important;
+    -webkit-box-sizing: border-box !important;
+    -moz-box-sizing: border-box !important;
+	FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+	FONT-WEIGHT: normal !important;
+	font-size: 9pt !important;
+	font:normal !important;
+}
+fieldset {
+outline: none;
+background: #f8f8ff !important;
+}
+
+#ngform textarea[readonly="readonly"] {
+	background: #D3D3D3 !important;
+    color: #000000	 !important;
+}
+
+#ngform textarea[locked="true"] {
+	background: #D3D3D3 !important;
+    color: #000000	 !important;
+}
+
+th.oforms_headercol
+{  
+    background-color: #ed1c24 !important;
+    color: white !important;
+        FONT-FAMILY: Arial, Helvetica, sans-serif !important;
+        FONT-WEIGHT: 600 !important;
+        font-size: 9pt !important;
+        font:normal !important;
+         height: 10px !important;
+        text-align: center !important;
+
+}
+
+
+button:active {
+	background-color: #ed6161 !important;
+    padding-top: 1px;
+    padding-right: 1px;
+    padding-bottom: 1px;
+    padding-left: 1px;
+}
+
+.black_overlay{
+    display: none;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: azure;
+    z-index:9997;
+    -moz-opacity: 0.3;
+    opacity:.30;
+    filter: alpha(opacity=30);
+}
+
+#ngform button[class*="Print"]{
+                background-color:white !important;
+                background: url(/webdesktop/resources/images/RLOS/print.png) no-repeat center  !important;
+                /* background-repeat: no-repeat; */
+}
+
+#ngform button[class*="Scan"]{
+                background-color:white !important;
+                background: url(/webdesktop/resources/images/RLOS/scan.png) no-repeat center !important;
+                /* background-repeat: no-repeat; */
+}
+
+#ngform button[class*="View"]{
+                background-color:white !important;
+                background: url(/webdesktop/resources/images/RLOS/viewDoc.png) no-repeat center !important;
+                /* background-repeat: no-repeat; */
+}
+
+#ngform button[class*="Download"]{
+                background-color:white !important;
+                background: url(/webdesktop/resources/images/RLOS/download.png) no-repeat center !important;
+                /* background-repeat: no-repeat; */
+}
+
+#ngform button[class*="AddFromDMS"]{
+                background-color:white !important;
+                background: url(/webdesktop/resources/images/RLOS/AddFromDMS.png) no-repeat center !important;
+                /* background-repeat: no-repeat; */
+}
+
+#ngform button[class*="AddFromPC"]{
+                background-color:white !important;
+                background: url(/webdesktop/resources/images/RLOS/AddFromPC.png) no-repeat center !important;
+                /* background-repeat: no-repeat; */
+}
+select#cmplx_FATCA_ListedReason {
+	height: 150px !important;	
+}
+select#cmplx_FATCA_SelectedReason {
+	height: 150px !important;	
+}
+select#CardDetails_Avl_Card_Product
+ {
+	height: 190px !important;	
+}
+select#CardDetails_Sel_Card_Product {
+	height: 190px !important;	
+}
+.panelHeaderLabel
+{
+	color: white !important;
+}
+/*Added By Prabhakar*/
+#CustomerDetails_Header
+{
+	color: blue !important;
+}
+/*-------------------*/
+
+/*to remove scroll bar*/
+#ProductContainer
+{
+	overflow: hidden !important;
+}
+
+

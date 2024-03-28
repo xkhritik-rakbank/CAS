@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EE_EAI_MESSAGE>
+	<EE_EAI_HEADER>
+	<MsgFormat>CARD_MAINTAINANCE</MsgFormat> 
+	<MsgVersion>0001</MsgVersion> 
+	<RequestorChannelId>BPM</RequestorChannelId> 
+	<RequestorUserId>RAKUSER</RequestorUserId> 
+	<RequestorLanguage>E</RequestorLanguage> 
+	<RequestorSecurityInfo>secure</RequestorSecurityInfo> 
+	<ReturnCode>0000</ReturnCode> 
+	<ReturnDesc>success</ReturnDesc> 
+	<MessageId>%%messageId%%</MessageId> 
+	<Extra1>REQ||SHELL.JOHN</Extra1> 
+	<Extra2>%%extra2%%</Extra2> 
+</EE_EAI_HEADER>
+	<CardMaintainance>
+		<BankId>RAK</BankId>
+		<CustId>FDABCD313</CustId>
+		<CardCRN>123456789</CardCRN>
+		<CardNumber>##CardNumber##</CardNumber>
+		<ReasonCode>##ReasonCode##</ReasonCode>
+		<RequestType>%%RequestType%%</RequestType>
+		<CardType>%%card_type_full%%</CardType>
+		<FreeField1></FreeField1>
+      	<FreeField2></FreeField2>
+	</CardMaintainance>
+</EE_EAI_MESSAGE>

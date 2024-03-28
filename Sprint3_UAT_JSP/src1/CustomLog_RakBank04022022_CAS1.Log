@@ -1,0 +1,63 @@
+[Fri Feb 04 15:20:17 GST 2022]
+ sSessionId, custom jsp: jPhw7UnUvnYjeaBhTuh85Q&#x3d;&#x3d;
+
+[Fri Feb 04 15:20:17 GST 2022]
+ properties file: <?xml version='1.0'?><APSelectWithColumnNames_Input><Option>APSelectWithColumnNames</Option><Query>select sessionId from WFSESSIONVIEW where sessionId='jPhw7UnUvnYjeaBhTuh85Q&#x3d;&#x3d;' and statusFlag='Y'</Query><Params></Params><EngineName>rakcas</EngineName><SessionId>jPhw7UnUvnYjeaBhTuh85Q&#x3d;&#x3d;</SessionId></APSelectWithColumnNames_Input>
+
+[Fri Feb 04 15:20:17 GST 2022]
+ properties OutputXML
+
+[Fri Feb 04 15:20:17 GST 2022]
+outputXML 
+
+[Fri Feb 04 15:20:17 GST 2022]
+mainCode 
+
+[Fri Feb 04 15:21:54 GST 2022]
+ sSessionId, custom jsp: jPhw7UnUvnYjeaBhTuh85Q&#x3d;&#x3d;
+
+[Fri Feb 04 15:21:54 GST 2022]
+ properties file: <?xml version='1.0'?><APSelectWithColumnNames_Input><Option>APSelectWithColumnNames</Option><Query>select sessionId from WFSESSIONVIEW where sessionId='jPhw7UnUvnYjeaBhTuh85Q&#x3d;&#x3d;' and statusFlag='Y'</Query><Params></Params><EngineName>rakcas</EngineName><SessionId>jPhw7UnUvnYjeaBhTuh85Q&#x3d;&#x3d;</SessionId></APSelectWithColumnNames_Input>
+
+[Fri Feb 04 15:21:54 GST 2022]
+ properties OutputXML
+
+[Fri Feb 04 15:21:54 GST 2022]
+outputXML 
+
+[Fri Feb 04 15:21:54 GST 2022]
+mainCode 
+
+[Fri Feb 04 15:22:18 GST 2022]
+ sSessionId, custom jsp: jPhw7UnUvnYjeaBhTuh85Q&#x3d;&#x3d;
+
+[Fri Feb 04 15:22:18 GST 2022]
+ properties file: <?xml version='1.0'?><APSelectWithColumnNames_Input><Option>APSelectWithColumnNames</Option><Query>select sessionId from WFSESSIONVIEW where sessionId='jPhw7UnUvnYjeaBhTuh85Q&#x3d;&#x3d;' and statusFlag='Y'</Query><Params></Params><EngineName>rakcas</EngineName><SessionId>jPhw7UnUvnYjeaBhTuh85Q&#x3d;&#x3d;</SessionId></APSelectWithColumnNames_Input>
+
+[Fri Feb 04 15:22:18 GST 2022]
+ properties OutputXML
+
+[Fri Feb 04 15:22:18 GST 2022]
+outputXML 
+
+[Fri Feb 04 15:22:18 GST 2022]
+mainCode 
+
+[Fri Feb 04 15:58:55 GST 2022]
+winame custom.jsp sSessionId_1 RGV4QxF/o9UZZOOni1Bacg==
+
+[Fri Feb 04 15:58:55 GST 2022]
+winame custom.jsp sSessionId RGV4QxF&#x2f;o9UZZOOni1Bacg&#x3d;&#x3d;
+
+[Fri Feb 04 15:58:55 GST 2022]
+ properties file: <?xml version='1.0'?><APSelectWithColumnNames_Input><Option>APSelectWithColumnNames</Option><Query>select sessionId from WFSESSIONVIEW where sessionId='RGV4QxF&#x2f;o9UZZOOni1Bacg&#x3d;&#x3d;' and statusFlag='Y'</Query><Params></Params><EngineName>rakcas</EngineName><SessionId>RGV4QxF&#x2f;o9UZZOOni1Bacg&#x3d;&#x3d;</SessionId></APSelectWithColumnNames_Input>
+
+[Fri Feb 04 15:58:55 GST 2022]
+ properties OutputXML
+
+[Fri Feb 04 15:58:55 GST 2022]
+outputXML 
+
+[Fri Feb 04 15:58:55 GST 2022]
+mainCode 
+

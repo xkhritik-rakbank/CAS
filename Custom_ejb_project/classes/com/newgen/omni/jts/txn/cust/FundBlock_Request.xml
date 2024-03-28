@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<EE_EAI_MESSAGE>
+<EE_EAI_HEADER>
+	<MsgFormat>FUND_BLOCK_ON_CREDIT_CARD</MsgFormat> 
+	<MsgVersion>0001</MsgVersion> 
+	<RequestorChannelId>BPM</RequestorChannelId> 
+	<RequestorUserId>BPMUSER</RequestorUserId> 
+	<RequestorLanguage>E</RequestorLanguage> 
+	<RequestorSecurityInfo>secure</RequestorSecurityInfo> 
+	<ReturnCode>0000</ReturnCode> 
+	<ReturnDesc>REQ</ReturnDesc> 
+	<MessageId>%%messageId%%</MessageId> 
+	<Extra1>REQ||BPM.123</Extra1> 
+	<Extra2>%%extra2%%</Extra2> 
+</EE_EAI_HEADER>	
+<CreditCardFundBlock>
+		<BankId>RAK</BankId>
+		<CustId>Fxxxx313</CustId>
+		<CardCRNNumber>123XXXX89</CardCRNNumber>
+		<CardNumber>##CardNumber##</CardNumber>
+		<TrnType>##TrnType##</TrnType>
+		<Amount>##Amount##</Amount>
+		<Currency>AED</Currency>
+		<CardExpiryDate>##CardExpiryDate##</CardExpiryDate>
+		<DebitAuthId>##DebitAuthId##</DebitAuthId>
+		<TrnRqUID>##TrnRqUID##</TrnRqUID>
+		<ApprovalId>##ApprovalId##</ApprovalId>
+		<ProcessingCode>##ProcessingCode##</ProcessingCode>
+		<Remarks>##Remarks##</Remarks>
+		<FreeField1>##FreeField1##</FreeField1>
+		<FreeField2>##MerchantCode##</FreeField2>
+		<FreeField3/>
+		<FreeField4/>
+		<FreeField5/>
+		<FreeAmount1>0.00</FreeAmount1>
+      	<FreeAmount2>0.00</FreeAmount2>
+      	<FreeDate1>%%date%%</FreeDate1>
+      	<FreeDate2>%%date%%</FreeDate2>
+</CreditCardFundBlock>
+</EE_EAI_MESSAGE>
